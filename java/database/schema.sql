@@ -3,11 +3,6 @@ BEGIN TRANSACTION;
 DROP TABLE IF EXISTS cat_question, question_sub, sub_answer, users, categories, questions, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_cat_id, seq_question_id, seq_subject_id, seq_answer_id;
 
-
-/*
-	POSSIBLY REMOVE
-*/
-
 CREATE SEQUENCE seq_cat_id
   INCREMENT BY 1
   NO MAXVALUE
@@ -16,12 +11,11 @@ CREATE SEQUENCE seq_cat_id
 
 CREATE TABLE categories (
 	cat_id INT NOT NULL DEFAULT nextval('seq_cat_id'),
-	name VARCHAR(36) NOT NULL,
+	name VARCHAR(36) NOT NULL UNIQUE,
 	
 	CONSTRAINT PK_categories PRIMARY KEY (cat_id)
 );
 
-/* ------------------------------------------------- */
 CREATE SEQUENCE seq_question_id
   INCREMENT BY 1
   NO MAXVALUE
@@ -110,15 +104,25 @@ INSERT INTO questions (question_text) VALUES ('I need help with'),
 											 ('I dont understand'),
 											 ('What is');
 											 
-INSERT INTO subjects (subject_type) VALUES ('resume'),
-										   ('interview');
+INSERT INTO subjects (subject_type) VALUES ('writing a cover letter'),
+										   ('prepping for an interview'),
+										   ('folllwing uo with employers'),
+										   ('what to wear to an interview'),
+										   ('common STAR questions');
 									
-INSERT INTO answers (description) VALUES ('nothing'),
-										 ('something');
+INSERT INTO answers (description) VALUES ('this is a resource on trello https://trello.com/c/VOl7OvsL/7-get-help-related-to-pathway'),
+										 ('something'),
+										 ('HI'),
+										 ('Hello'),
+										 ('Bye'),
+										 ('Goodbye');
 
 INSERT INTO cat_question (cat_id, question_id) VALUES (1,1), (1,2), (1,3), (1,4);
-INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (2,1), (2,2), (3,1), (3,2), (4,1), (4,2);
-INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,1), (1,2), (2,1), (2,2);
+
+INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (1,3), (1,4), (1,5), (2,1), (2,2), (2,3), (2,4), (2,5), (3,1), (3,2), (3,3), (3,4),
+														  (3,5), (4,1), (4,2), (4,3), (4,4), (4,5);
+														  
+INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,2), (2,1), (3,2), (4,1), (5,2);
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');

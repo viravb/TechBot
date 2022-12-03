@@ -1,4 +1,4 @@
-package com.techelevator.model;
+package com.techelevator.model.security;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
