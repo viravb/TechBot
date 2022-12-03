@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+    <p>Welcome to TechBot!</p>
   </div>
 </template>
 
@@ -10,3 +10,14 @@ export default {
   name: "home"
 };
 </script>
+
+<style >
+
+.home {
+  background-color: aqua;
+  text-align: center;
+}
+
+
+</style>
+
