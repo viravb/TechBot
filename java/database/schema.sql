@@ -1,7 +1,92 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users;
-DROP SEQUENCE IF EXISTS seq_user_id;
+DROP TABLE IF EXISTS cat_question, question_sub, sub_answer, users, categories, questions, subjects, answers;
+DROP SEQUENCE IF EXISTS seq_user_id, seq_cat_id, seq_question_id, seq_subject_id, seq_answer_id;
+
+
+/*
+	POSSIBLY REMOVE
+*/
+
+CREATE SEQUENCE seq_cat_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
+
+CREATE TABLE categories (
+	cat_id INT NOT NULL DEFAULT nextval('seq_cat_id'),
+	name VARCHAR(36) NOT NULL,
+	
+	CONSTRAINT PK_categories PRIMARY KEY (cat_id)
+);
+
+/* ------------------------------------------------- */
+CREATE SEQUENCE seq_question_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
+
+CREATE TABLE questions (
+	question_id INT NOT NULL DEFAULT nextval('seq_question_id'),
+	question_text VARCHAR(255) NOT NULL,
+	
+	CONSTRAINT PK_questions PRIMARY KEY (question_id)
+);
+
+CREATE SEQUENCE seq_subject_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
+
+CREATE TABLE subjects (
+	subject_id INT NOT NULL DEFAULT nextval('seq_subject_id'),
+	subject_type VARCHAR(36) NOT NULL,
+	
+	CONSTRAINT PK_subjects PRIMARY KEY (subject_id)
+);
+
+CREATE SEQUENCE seq_answer_id
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
+
+CREATE TABLE answers (
+	answer_id INT NOT NULL DEFAULT nextval('seq_answer_id'),
+	description VARCHAR(255) NOT NULL,
+	
+	CONSTRAINT PK_answers PRIMARY KEY (answer_id)
+);
+
+CREATE TABLE cat_question (
+	cat_id INT NOT NULL,
+	question_id INT NOT NULL,
+	
+	CONSTRAINT PK_cat_question PRIMARY KEY (cat_id, question_id),
+	CONSTRAINT FK_cat_question_cat_id FOREIGN KEY (cat_id) REFERENCES categories(cat_id),
+	CONSTRAINT FK_cat_question_question_id FOREIGN KEY (question_id) REFERENCES questions(question_id)
+);
+
+CREATE TABLE question_sub (
+	question_id INT NOT NULL,
+	subject_id INT NOT NULL,
+	
+	CONSTRAINT PK_question_sub PRIMARY KEY (question_id, subject_id),
+	CONSTRAINT FK_question_sub_question_id FOREIGN KEY (question_id) REFERENCES questions(question_id),
+	CONSTRAINT FK_question_sub_subject_id FOREIGN KEY (subject_id) REFERENCES subjects(subject_id)
+);
+
+CREATE TABLE sub_answer (
+	subject_id INT NOT NULL,
+	answer_id INT NOT NULL,
+	
+	CONSTRAINT PK_sub_answer PRIMARY KEY (subject_id, answer_id),
+	CONSTRAINT FK_sub_answer_subject_id FOREIGN KEY (subject_id) REFERENCES subjects(subject_id),
+	CONSTRAINT FK_sub_answer_answer_id FOREIGN KEY (answer_id) REFERENCES answers(answer_id)
+);
 
 CREATE SEQUENCE seq_user_id
   INCREMENT BY 1
@@ -18,8 +103,24 @@ CREATE TABLE users (
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
+INSERT INTO categories (name) VALUES ('Pathway');
+
+INSERT INTO questions (question_text) VALUES ('I need help with'),
+											 ('Where can I learn about'),
+											 ('I dont understand'),
+											 ('What is');
+											 
+INSERT INTO subjects (subject_type) VALUES ('resume'),
+										   ('interview');
+									
+INSERT INTO answers (description) VALUES ('nothing'),
+										 ('something');
+
+INSERT INTO cat_question (cat_id, question_id) VALUES (1,1), (1,2), (1,3), (1,4);
+INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (2,1), (2,2), (3,1), (3,2), (4,1), (4,2);
+INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,1), (1,2), (2,1), (2,2);
+
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
-
 
 COMMIT TRANSACTION;
