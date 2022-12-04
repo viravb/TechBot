@@ -20,7 +20,9 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    userText: []
+    userName: '',
+    userText: [],
+
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -41,6 +43,9 @@ export default new Vuex.Store({
     },
     SAVE_TEXT(state, userText) {
       state.userText.push(userText);
+    },
+    SAVE_NAME(state, userName) {
+      state.userName = userName;
     }
   }
 })
