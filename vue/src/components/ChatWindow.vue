@@ -3,6 +3,7 @@
        
       <computer-bubble />
       <user-text-list />
+     <!--<welcome v-if='this.$store.state.userName == "" '/> -->
   </div>
 </template>
 

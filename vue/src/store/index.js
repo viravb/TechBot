@@ -22,6 +22,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     userName: '',
     userText: [],
+    computerResponse: []
 
   },
   mutations: {
@@ -44,6 +45,7 @@ export default new Vuex.Store({
     SAVE_TEXT(state, userText) {
       state.userText.push(userText);
     },
+    // The SAVE_NAME mutation may not be needed
     SAVE_NAME(state, userName) {
       state.userName = userName;
     }
