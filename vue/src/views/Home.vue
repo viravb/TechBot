@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>Welcome to TechBot!</p>
-  
+    <h1>Welcome to TechBot!</h1>
     <chat-window />
     <user-input />
 

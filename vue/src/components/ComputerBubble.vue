@@ -1,11 +1,12 @@
 <template>
   <div class="computer-bubble">
-      <p>Welcome, user!</p>
+      <p>Welcome, {{this.$store.state.userName}}</p>
   </div>
 </template>
 
 <script>
 import CategoriesService from '@/services/CategoriesService.js'
+
 
 export default {
 
@@ -15,6 +16,7 @@ export default {
         }
     },
     created() {
+        this.$store.state.userName = prompt('What is your name', "default answer");
 
         CategoriesService.getAllThings().then(response => {
             this.database = response.data;

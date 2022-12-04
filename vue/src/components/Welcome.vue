@@ -2,7 +2,7 @@
   <div>
       <h1>Please enter your name</h1>
       <form class='user-name' v-on:submit.prevent='saveName'>
-          <input type='text' v-model='userName'/>
+          <input type='text' v-model='name'/>
           <input type="submit" value="Save">
       </form>
   </div>
@@ -11,10 +11,16 @@
 <script>
 export default {
     name: 'welcome',
+    data() {
+        return {
+            name: ''
+        }
+    },
     methods: {
         saveName() {
-            this.$store.commit('SAVE_NAME', this.userName);
-        }
+           this.$store.state.name = this.name;
+        },
+    
     }
 }
 </script>
@@ -22,7 +28,7 @@ export default {
 <style>
 
 div {
-
+    
     border: 2px solid black;
     border-radius: 10px;
     width: 250px;
