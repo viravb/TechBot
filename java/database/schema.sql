@@ -13,6 +13,8 @@ CREATE SEQUENCE seq_cat_id
   NO MAXVALUE
   NO MINVALUE
   CACHE 1;
+  
+  
 
 CREATE TABLE categories (
 	cat_id INT NOT NULL DEFAULT nextval('seq_cat_id'),
@@ -124,3 +126,12 @@ INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULi
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
 COMMIT TRANSACTION;
+
+
+SELECT categories.name, question_text, subject_type, description FROM categories
+FULL OUTER JOIN cat_question ON categories.cat_id = cat_question.cat_id
+FULL OUTER JOIN questions ON cat_question.question_id = questions.question_id
+FULL OUTER JOIN question_sub ON questions.question_id = question_sub.question_id
+FULL OUTER JOIN subjects ON question_sub.subject_id = subjects.subject_id
+FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
+FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id
