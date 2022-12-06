@@ -1,6 +1,8 @@
 <template>
-  <div class="computer-bubble" v-if='constant()'>
-      <p>{{answers.answer}}</p>
+  <div class="computer-bubble">
+      <div v-show='$store.state.answers.length > 0'>
+        <p>{{answer}}</p>  
+      </div>
   </div>
 </template>
 <script>
@@ -8,10 +10,11 @@
 export default {
     name: 'computer-bubble',
     props: {
-        answers: Object
+        answer: String
     },
     data() {
         return {
+
         }
     },
 
@@ -21,7 +24,7 @@ export default {
 </script>
 <style>
 .computer-bubble {
-    border: 0px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     display: flex;
     margin-right: 35%;

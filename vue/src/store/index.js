@@ -19,7 +19,7 @@ export default new Vuex.Store({
     userName: '',
     userText: [],
     computerText: [],
-    answers: ['something']
+    answers: []
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

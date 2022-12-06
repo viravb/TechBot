@@ -28,7 +28,12 @@ public class AnswersController {
     }
 
     private List<String> sentenceToArray(String sentence) {
-        String[] sentenceArray = sentence.split(" ");
+
+        String newSentence = "";
+        if(sentence.substring(sentence.length() - 1).equals("=")) {
+            newSentence = sentence.substring(0, sentence.length() - 1);
+        }
+        String[] sentenceArray = newSentence.split(" ");
         List<String> stringList = List.of(sentenceArray);
         return stringList;
     }
