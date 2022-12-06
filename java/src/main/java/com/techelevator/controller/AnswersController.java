@@ -28,7 +28,7 @@ public class AnswersController {
     }
 
     private List<String> sentenceToArray(String sentence) {
-        String[] sentenceArray = sentence.split("");
+        String[] sentenceArray = sentence.split(" ");
         List<String> stringList = List.of(sentenceArray);
         return stringList;
     }
@@ -36,25 +36,27 @@ public class AnswersController {
     private String getSubject(List<String> stringList) {
         List<Subject> subjects = subjectDao.getSubjects();
 
+        String subjectType = "";
         for(String word : stringList) {
             for (Subject subject : subjects) {
                 if (word.equals(subject.getSubjectType())) {
-                    return word;
+                    subjectType = subject.getSubjectType();
+                    break;
                 }
             }
         }
-        return "word";
+        return subjectType;
     }
 
     private String returnAnswer(String javascript) {
         List<Answers> answerList = answersDao.getAllAnswers();
-
+        String description = "";
         for(Answers answer : answerList) {
             if(answer.getSubjectType().equalsIgnoreCase(javascript)) {
-                return answer.getDescription();
+                description = answer.getDescription();
             }
         }
-        return "here";
+        return description;
     }
 
 
