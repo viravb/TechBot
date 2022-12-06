@@ -3,6 +3,7 @@
     <h1>Home</h1>
     <p>Welcome to TechBot!</p>
   
+
     <chat-window />
     <user-input />
 
@@ -17,7 +18,12 @@ import UserInput from '../components/UserInput.vue';
 
 export default {
   components: { ChatWindow, UserInput },
-  name: "home"
+  name: "home",
+  created(){
+    person = 
+
+    })
+  }
 }
 </script>
 <style >
