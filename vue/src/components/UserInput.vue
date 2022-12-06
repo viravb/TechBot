@@ -19,6 +19,11 @@ export default {
         saveText() {
             this.$store.commit('SAVE_TEXT', this.userText);
             this.userText = '';
+        },
+        filteredKeyWord() {
+            if (this.$store.userText.index(this.$store.userText).search('pathway')) {
+                return 'pathway';
+            }
         }
     }
 }
