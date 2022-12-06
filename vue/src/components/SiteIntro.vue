@@ -15,5 +15,7 @@ export default {
 div h1 {
   text-align: center;
   text-decoration: underline;
+  font-family: 'Oswald', sans-serif;
+  font-family: 'Zen Dots', cursive;
 }
 </style>
