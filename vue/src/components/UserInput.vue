@@ -1,35 +1,35 @@
 <template>
   <div class="user-input">
-      <form v-on:submit.prevent='(filteredKeyWord())'>
+      <form v-on:submit.prevent='filteredKeyWord()'>
           <input class="user-text" type="text" v-model='userText'>
       </form>
   </div>
 </template>
 <script>
-import AnswersService from '@/services/AnswersService.js'
+import AnswersService from '@/services/AnswersService';
 
 export default {
     name: "user-input",
     data() {
         return {
-            userText:''
+            userText: ''
         }
     },
     methods : {
-        // saveText() {
-        // },
+        
         filteredKeyWord() {
             this.$store.commit('SAVE_TEXT', this.userText);
-                    AnswersService.getAnswers().then(response => {
-            console.log(response)
-        this.$store.commit('GET_ANSWERS', response.data);
-        this.$store.commit('GET_COMPUTER', response.data);
-           
+
+            AnswersService.getAnswers(this.userText).then(response => {
+                console.log(response.data)
+                this.$store.commit('GET_ANSWERS', response.data);
+                this.$store.commit('GET_COMPUTER', response.data);
             
-        }).catch(error => console.error(error));
-        
+                
+            }).catch(error => console.error(error));
+
             this.userText = '';
-        }
+        },
     }
 }
 </script>
@@ -46,7 +46,7 @@ div.user-input input.user-text {
     height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 0px solid black;
+    border: 4px solid black;
     border-radius: 10px;
     background-color: white;
     resize: none;

@@ -4,9 +4,9 @@ import axios from "axios";
 
 export default {
 
-    getAnswers() {
+    getAnswers(keyword) {
         
-     return axios.post('/answers', this.$store.state.userInput);
+     return axios.post('/answers', keyword);
      
         
     }
