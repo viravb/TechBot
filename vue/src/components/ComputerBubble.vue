@@ -1,11 +1,12 @@
 <template>
   <div class="computer-bubble">
-      <p>{{$store.state.computerText}}</p>
+      <p>{{$store.state.answers}}</p>
   </div>
 </template>
 
 <script>
 import CategoriesService from '@/services/CategoriesService.js'
+import AnswersService from '@/services/AnswersService.js'
 
 
 export default {
@@ -15,7 +16,7 @@ export default {
     },
     data() {
         return {
-            filter: [],
+           
         }
     },
     created() {       
@@ -25,6 +26,13 @@ export default {
                 this.$store.commit('GET_COMPUTER', x);
             })
         }).catch( error => console.error(error));
+        AnswersService.getAnswers().then(response => {
+            response.data.map((x) => {
+                this.$store.commit('GET_ANSWERS', x);
+            })
+            console.log(response)
+        }).catch(error => console.error(error));
+
     },
     methods: {
     },
