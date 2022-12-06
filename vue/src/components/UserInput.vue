@@ -1,6 +1,6 @@
 <template>
   <div class="user-input">
-      <form v-on:submit.prevent='(saveText())'>
+      <form v-on:submit.prevent='(filteredKeyWord())'>
           <input class="user-text" type="text" v-model='userText'>
       </form>
   </div>
@@ -16,14 +16,16 @@ export default {
         }
     },
     methods : {
-        saveText() {
-            this.$store.commit('SAVE_TEXT', this.userText);
-            this.userText = '';
-        },
+        // saveText() {
+           
+            
+        // },
         filteredKeyWord() {
-            if (this.$store.userText.index(this.$store.userText).search('pathway')) {
-                return 'pathway';
+             this.$store.commit('SAVE_TEXT', this.userText);
+            if (this.userText.includes('pathway')) {
+                 this.$store.state.keyword = 'pathway';
             }
+            this.userText = '';
         }
     }
 }

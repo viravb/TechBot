@@ -23,6 +23,8 @@ export default new Vuex.Store({
     userName: '',
     userText: [],
     computerText: [],
+    answers: [],
+    keyword: ''
 
   },
   mutations: {
@@ -47,6 +49,9 @@ export default new Vuex.Store({
     },
     GET_COMPUTER(state, data) {
       state.computerText.push(data);
+    },
+    GET_ANSWERS(state, data) {
+      state.answers.push(data);
     },
     SAVE_NAME(state, name) {
       state.userName = name;
