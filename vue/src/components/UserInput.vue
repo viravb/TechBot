@@ -46,7 +46,7 @@ div.user-input input.user-text {
     height: 100px;
     padding: 12px 20px;
     box-sizing: border-box;
-    border: 4px solid black;
+    border: 0px solid black;
     border-radius: 10px;
     background-color: white;
     resize: none;

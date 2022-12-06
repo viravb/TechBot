@@ -47,7 +47,7 @@ export default {
 <style>
 
 .computer-bubble {
-    border: 2px solid black;
+    border: 0px solid black;
     border-radius: 5px;
     display: flex;
     margin-right: 35%;
