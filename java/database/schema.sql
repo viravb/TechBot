@@ -108,15 +108,15 @@ INSERT INTO questions (question_text) VALUES ('I need help with'),
 											 
 INSERT INTO subjects (subject_type) VALUES ('writing a cover letter'),
 										   ('prepping for an interview'),
-										   ('folllwing uo with employers'),
+										   ('folllwing up with employers'),
 										   ('what to wear to an interview'),
 										   ('common STAR questions');
 									
-INSERT INTO answers (description) VALUES ('this is a resource on trello https://trello.com/c/VOl7OvsL/7-get-help-related-to-pathway'),
-										 ('something'),
-										 ('HI'),
-										 ('Hello'),
-										 ('Bye'),
+INSERT INTO answers (description) VALUES ('This is a good resource for learning about cover letters https://careercenter.umich.edu/article/cover-letters'),
+										 ('Here is a great resource for learning about job interviews https://careercenter.umich.edu/article/interviewing-resources'),
+										 ('Here is a resource on what to wear to an interview https://www.thebalancemoney.com/best-interview-attire-for-every-type-of-interview-2061364#:~:text=For%20women%2C%20a%20blouse%20and,will%20distract%20the%20hiring%20manager.'),
+										 ('Here is another resource on what to wear to an interview https://cultivatedculture.com/what-to-wear-to-an-interview/'),
+										 ('Here is a resource on the top 30 STAR questions https://www.themuse.com/advice/behavioral-interview-questions-answers-examples'),
 										 ('Goodbye');
 
 INSERT INTO cat_question (cat_id, question_id) VALUES (1,1), (1,2), (1,3), (1,4);

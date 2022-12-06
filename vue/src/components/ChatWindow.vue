@@ -1,18 +1,19 @@
 <template>
   <div class="window">
-       <welcome />
+       
       <computer-bubble />
       <user-text-list />
+     <!--<welcome v-if='this.$store.state.userName == "" '/> -->
   </div>
 </template>
 
 <script>
 import ComputerBubble from './ComputerBubble.vue'
 import UserTextList from './UserTextList.vue'
-import Welcome from '@/components/Welcome.vue'
+
 
 export default {
-  components: { ComputerBubble, UserTextList, Welcome },
+  components: { ComputerBubble, UserTextList},
     name: "chat-window"
 
 }
