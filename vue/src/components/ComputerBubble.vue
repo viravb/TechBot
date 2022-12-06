@@ -49,5 +49,9 @@ export default {
     height: 50px;
     background-color: lightgreen;
 }
+p {
+      font-family: 'Oswald', sans-serif;
+        font-family: 'Zen Dots', cursive;
+}
 
 </style>
