@@ -20,11 +20,10 @@ export default {
     },
     created() {       
         CategoriesService.getAllThings().then(response => {
+            console.log(response)
             response.data.map((x) => {
                 this.$store.commit('GET_COMPUTER', x);
             })
-                console.log(this.answer)
-            console.log(response);
         }).catch( error => console.error(error));
     },
     methods: {
