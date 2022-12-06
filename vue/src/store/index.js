@@ -22,7 +22,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     userName: '',
     userText: [],
-    computerResponse: []
+    computerText: [],
 
   },
   mutations: {
@@ -43,11 +43,13 @@ export default new Vuex.Store({
       axios.defaults.headers.common = {};
     },
     SAVE_TEXT(state, userText) {
-      state.userText.push(userText);
+      state.userText.push({text: userText})
     },
-    // The SAVE_NAME mutation may not be needed
-    SAVE_NAME(state, userName) {
-      state.userName = userName;
+    GET_COMPUTER(state, data) {
+      state.computerText.push(data);
+    },
+    SAVE_NAME(state, name) {
+      state.userName = name;
     }
   }
 })

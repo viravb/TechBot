@@ -1,36 +1,48 @@
 <template>
   <div class="home">
-    <h1>Welcome to TechBot!</h1>
-    <chat-window />
-    <user-input />
-
+    <SiteIntro class='intro'/>
+    <ChatWindow class='win'/>
+    <UserInput class='user'/>
   </div>
 </template>
 
 <script>
-import ChatWindow from '@/components/ChatWindow.vue'
-import UserInput from '../components/UserInput.vue';
+import ChatWindow from '@/components/ChatWindow';
+import UserInput from '@/components/UserInput';
+import SiteIntro from '@/components/SiteIntro';
 
 export default {
-  components: { ChatWindow, UserInput},
+  components: { 
+    ChatWindow, 
+    UserInput,
+    SiteIntro
+  },
   name: "home"
 }
 </script>
 <style >
 
-.home {
-  background-color: aqua;
-  text-align: center;
+div.home {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 'header header header'
+                       'chat chat chat'
+                       'input input input';
+  height: 120vh;
+  width: 100%;
 }
 
-welcome {
- 
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-  background-color: rgba(0,0,0,0.5); /*dim the background*/
+.win {
+  grid-area: chat;
 }
+
+.user {
+  grid-area: input;
+}
+
+.intro {
+  grid-area: header;
+}
+
 </style>
 

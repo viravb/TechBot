@@ -1,7 +1,13 @@
-BEGIN TRANSACTION;
+SELECT subject_type, description FROM subjects
+FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
+FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id
+
+SELECT * FROM subjects
+
 
 DROP TABLE IF EXISTS cat_question, question_sub, sub_answer, users, categories, questions, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_cat_id, seq_question_id, seq_subject_id, seq_answer_id;
+
 
 CREATE SEQUENCE seq_cat_id
   INCREMENT BY 1
@@ -55,6 +61,7 @@ CREATE TABLE answers (
 	CONSTRAINT PK_answers PRIMARY KEY (answer_id)
 );
 
+
 CREATE TABLE cat_question (
 	cat_id INT NOT NULL,
 	question_id INT NOT NULL,
@@ -106,23 +113,21 @@ INSERT INTO questions (question_text) VALUES ('I need help with'),
 											 
 INSERT INTO subjects (subject_type) VALUES ('writing a cover letter'),
 										   ('prepping for an interview'),
-										   ('folllwing uo with employers'),
 										   ('what to wear to an interview'),
 										   ('common STAR questions');
+										   
+INSERT INTO answers (description) VALUES ('This is a good resource for learning about cover letters https://careercenter.umich.edu/article/cover-letters'),
+										 ('Here is a great resource for learning about job interviews https://careercenter.umich.edu/article/interviewing-resources'),
+										 ('Here is a resource on what to wear to an interview https://www.thebalancemoney.com/best-interview-attire-for-every-type-of-interview-2061364#:~:text=For%20women%2C%20a%20blouse%20and,will%20distract%20the%20hiring%20manager.'),
+										 ('Here is another resource on what to wear to an interview https://cultivatedculture.com/what-to-wear-to-an-interview/'),
+										 ('Here is a resource on the top 30 STAR questions https://www.themuse.com/advice/behavioral-interview-questions-answers-examples');
 									
-INSERT INTO answers (description) VALUES ('this is a resource on trello https://trello.com/c/VOl7OvsL/7-get-help-related-to-pathway'),
-										 ('something'),
-										 ('HI'),
-										 ('Hello'),
-										 ('Bye'),
-										 ('Goodbye');
-
 INSERT INTO cat_question (cat_id, question_id) VALUES (1,1), (1,2), (1,3), (1,4);
 
-INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (1,3), (1,4), (1,5), (2,1), (2,2), (2,3), (2,4), (2,5), (3,1), (3,2), (3,3), (3,4),
-														  (3,5), (4,1), (4,2), (4,3), (4,4), (4,5);
+INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (1,3), (1,4), (2,1), (2,2), (2,3), (2,4), (3,1), (3,2), (3,3), (3,4),
+														  (4,1), (4,2), (4,3), (4,4);
 														  
-INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,2), (2,1), (3,2), (4,1), (5,2);
+INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,1), (2,2), (3,3), (3,4), (4,5);
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');

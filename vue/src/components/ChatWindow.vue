@@ -1,33 +1,34 @@
 <template>
   <div class="window">
-       
-      <computer-bubble />
-      <user-text-list />
-     <!--<welcome v-if='this.$store.state.userName == "" '/> -->
+      <ComputerBubble />
+      <UserTextList v-for='text in $store.state.userText' v-bind:key='text.id' v-bind:text='text'/>
   </div>
 </template>
 
 <script>
-import ComputerBubble from './ComputerBubble.vue'
-import UserTextList from './UserTextList.vue'
+import ComputerBubble from './ComputerBubble.vue';
+import UserTextList from './UserTextList.vue';
 
 
 export default {
-  components: { ComputerBubble, UserTextList},
+  components: { 
+    ComputerBubble, 
+    UserTextList,
+    
+  },
     name: "chat-window"
 
 }
 </script>
 
 <style>
-    .window {
-        border: 4px solid black;
-        border-radius: 10px;
-        height: 800px;
-        display: flexbox;
-        margin: 20px;
-        background-color: white;
-        flex-direction: row;
-    }
+.window {
+  border: 4px solid black;
+  border-radius: 10px;
+  height: 700px;
+  margin: 20px 20px 5px 20px;
+  background-color: white;
+  overflow: auto;
+}
 
 </style>

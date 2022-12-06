@@ -1,8 +1,7 @@
 <template>
   <div class="user-input">
-      <form class="user-form" v-on:submit.prevent="saveText">
+      <form v-on:submit.prevent='(saveText())'>
           <input class="user-text" type="text" v-model='userText'>
-          <input type="submit" value="Save">
       </form>
   </div>
 </template>
@@ -13,9 +12,7 @@ export default {
     
     data() {
         return {
-            userText: {
-                input: ''
-            }
+            userText:''
         }
     },
     methods : {
@@ -28,20 +25,25 @@ export default {
 </script>
 
 <style>
-.user-input {
-        border: 4px solid black;
-        border-radius: 10px;
-        height: 50px;
-        display: flexbox;
-        margin: 20px;
-        background-color: white;
-        flex-direction: row;
-        
-    }
-.user-form {
-    border: 4px solid black;
-        border-radius: 10px;
-        height: 50px;
 
+div.user-input {
+    height: 100px;
+    margin: 5px 20px 20px 20px;
+    border-radius: 10px;
+    background-color: white;
+    flex-direction: row;
 }
+
+div.user-input input.user-text {
+    width: 100%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: white;
+    resize: none;
+    font-size: 16px;
+}
+
 </style>

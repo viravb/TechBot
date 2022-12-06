@@ -23,11 +23,7 @@ public class JdbcFullResponseDao implements FullResponseDao{
     @Override
     public List<FullResponse> getEverything() {
         List<FullResponse> response = new ArrayList<>();
-        String sql = "SELECT categories.name, question_text, subject_type, description FROM categories " +
-                "JOIN cat_question ON categories.cat_id = cat_question.cat_id " +
-                "JOIN questions ON cat_question.question_id = questions.question_id " +
-                "JOIN question_sub ON questions.question_id = question_sub.question_id " +
-                "JOIN subjects ON question_sub.subject_id = subjects.subject_id " +
+        String sql = "SELECT subject_type, description FROM subjects " +
                 "JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id " +
                 "JOIN answers ON sub_answer.answer_id = answers.answer_id;";
 
@@ -41,8 +37,6 @@ public class JdbcFullResponseDao implements FullResponseDao{
     private FullResponse mapRowToResponse(SqlRowSet rowSet) {
         FullResponse fullResponse = new FullResponse();
 
-        fullResponse.setCategory(rowSet.getString("name"));
-        fullResponse.setQuestion(rowSet.getString("question_text"));
         fullResponse.setSubject(rowSet.getString("subject_type"));
         fullResponse.setAnswer(rowSet.getString("description"));
 

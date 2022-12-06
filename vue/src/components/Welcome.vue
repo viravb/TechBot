@@ -1,9 +1,9 @@
 <template>
-  <div>
-      <h1>Please enter your name</h1>
-      <form class='user-name' v-on:submit.prevent='saveName'>
-          <input type='text' v-model='name'/>
-          <input type="submit" value="Save">
+  <div class='welcome'>
+      <h1>Please enter your name :</h1>
+      <form class='user-name'>
+          <input type='text' v-model='name' required/>
+          <button type="submit" v-on:click.stop.prevent='submit()'>Submit</button>
       </form>
   </div>
 </template>
@@ -17,27 +17,34 @@ export default {
         }
     },
     methods: {
-        saveName() {
-           this.$store.state.name = this.name;
+        submit() {
+            if(this.name == '') {
+                alert("Please Enter A Name")
+            } else {
+                this.$store.commit('SAVE_NAME', this.name); 
+                this.$router.push('/home');
+            }
         },
-    
     }
 }
 </script>
 
 <style>
 
-div {
-    
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 250px;
-    height: 550px;
-    margin: 20px;
-
+div.welcome{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
+div.welcome h1 {
+    text-decoration: none;
+    font-size: 20px;
+}
 
-
+div.welcome form {
+    margin-top: 15px;
+    padding-left: 10px;
+}
 
 </style>
