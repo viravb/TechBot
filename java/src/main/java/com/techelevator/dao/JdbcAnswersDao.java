@@ -21,7 +21,9 @@ public class JdbcAnswersDao implements AnswersDao {
     @Override
     public List<Answers> getAllAnswers() {
         List<Answers> allAnswers = new ArrayList<Answers>();
-        String sql = "SELECT answer_id, description FROM answers";
+        String sql = "SELECT answers.answer_id, description, subject_type FROM answers " +
+                "JOIN sub_answer ON answers.answer_id = sub_answer.answer_id " +
+                "JOIN subjects ON sub_answer.subject_id = subjects.subject_id";
 
         SqlRowSet rowSet = jdbcTemplate.queryForRowSet(sql);
 
@@ -49,6 +51,7 @@ public class JdbcAnswersDao implements AnswersDao {
         Answers answer = new Answers();
         answer.setAnswerId(rowSet.getInt("answer_id"));
         answer.setDescription(rowSet.getString("description"));
+        answer.setSubjectType(rowSet.getString("subject_type"));
 
         return answer;
     }
