@@ -9,9 +9,11 @@
 
 <script>
 
+
 export default {
   name: 'user-text-list',
   props: {text: Object},
+      
 }
 </script>
 

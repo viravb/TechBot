@@ -5,11 +5,11 @@
       </form>
   </div>
 </template>
-
 <script>
+import AnswersService from '@/services/AnswersService.js'
+
 export default {
     name: "user-input",
-    
     data() {
         return {
             userText:''
@@ -17,22 +17,23 @@ export default {
     },
     methods : {
         // saveText() {
-           
-            
         // },
         filteredKeyWord() {
-             this.$store.commit('SAVE_TEXT', this.userText);
-            if (this.userText.includes('pathway')) {
-                 this.$store.state.keyword = 'pathway';
-            }
+            this.$store.commit('SAVE_TEXT', this.userText);
+                    AnswersService.getAnswers().then(response => {
+            console.log(response)
+        this.$store.commit('GET_ANSWERS', response.data);
+        this.$store.commit('GET_COMPUTER', response.data);
+           
+            
+        }).catch(error => console.error(error));
+        
             this.userText = '';
         }
     }
 }
 </script>
-
 <style>
-
 div.user-input {
     height: 100px;
     margin: 5px 20px 20px 20px;
@@ -40,7 +41,6 @@ div.user-input {
     background-color: white;
     flex-direction: row;
 }
-
 div.user-input input.user-text {
     width: 100%;
     height: 100px;
@@ -52,5 +52,4 @@ div.user-input input.user-text {
     resize: none;
     font-size: 16px;
 }
-
 </style>
