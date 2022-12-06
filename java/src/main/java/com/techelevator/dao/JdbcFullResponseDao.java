@@ -23,9 +23,10 @@ public class JdbcFullResponseDao implements FullResponseDao{
     @Override
     public List<FullResponse> getEverything() {
         List<FullResponse> response = new ArrayList<>();
-        String sql = "SELECT subject_type, description FROM subjects " +
+        String sql = "SELECT description FROM subjects " +
                 "JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id " +
-                "JOIN answers ON sub_answer.answer_id = answers.answer_id;";
+                "JOIN answers ON sub_answer.answer_id = answers.answer_id" +
+                " WHERE subject_type=?";
 
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
         while(results.next()) {

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import javax.sql.DataSource;
 import java.util.ArrayList;
 import java.util.List;
+
 @Component
 public class JdbcAnswersDao implements AnswersDao {
 
