@@ -5,6 +5,7 @@
         <p>
           <span>{{text.text}}</span>
         </p>
+        
       </li>
     </ul>
   </div>
@@ -24,17 +25,14 @@ export default {
 <style>
 div.user-text-list ul {
   list-style-type: none;
-  
 }
-
 span{
   width:100%;
   height:1em;
   display:inline-block;
 }
-
 .user {
-  border: 2px solid black;
+  border: 1px solid lightblue;
   border-radius: 5px;
   margin-left: 30%;
   margin-right: 2%;
@@ -43,9 +41,8 @@ span{
   background-color: lightblue;
   box-shadow: 10px 10px 5px #AAAAAA;
 }
-
 .computer{
-  border: 2px solid black;
+  border: 1px solid lightgreen;
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;

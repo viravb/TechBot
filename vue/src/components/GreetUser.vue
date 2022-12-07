@@ -14,7 +14,7 @@ export default {
 
 <style>
 div.greet {
-    border: 2px solid black;
+    border: 0px solid black;
     border-radius: 5px;
     display: flex;
     margin-right: 35%;
@@ -23,6 +23,7 @@ div.greet {
     justify-content: flex-start;
     height: 50px;
     background-color: lightgreen;
+    box-shadow: 10px 10px 5px #AAAAAA;
 }
 div.greet p {
     font-family: 'Oswald', sans-serif;

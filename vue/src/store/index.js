@@ -17,11 +17,13 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     userName: '',
+    linkURL: "",
     userText: [
     {
       text: "If you need help with what to ask please type help",
       id: 'computer'
-    }
+    },
+    
   ],
   },
   mutations: {
@@ -49,6 +51,9 @@ export default new Vuex.Store({
     },
     SAVE_NAME(state, name) {
       state.userName = name;
+    },
+    SAVE_LINK(state, urlFromResponse){
+      state.linkURL = urlFromResponse;
     }
   }
 })
