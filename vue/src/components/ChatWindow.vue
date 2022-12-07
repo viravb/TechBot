@@ -5,7 +5,7 @@
   </div>
 </template>
 
-<script>
+<script> 
 import UserTextList from './UserTextList.vue';
 import GreetUser from './GreetUser.vue';
 
@@ -16,10 +16,7 @@ export default {
     GreetUser
     
   },
-    name: "chat-window",
-
-    
-
+    name: "chat-window"
 }
 </script>
 
