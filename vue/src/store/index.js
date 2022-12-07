@@ -18,8 +18,6 @@ export default new Vuex.Store({
     user: currentUser || {},
     userName: '',
     userText: [],
-    computerText: [],
-    answers: []
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -39,13 +37,10 @@ export default new Vuex.Store({
       axios.defaults.headers.common = {};
     },
     SAVE_TEXT(state, userText) {
-      state.userText.push({text: userText})
-    },
-    GET_COMPUTER(state, data) {
-      state.computerText.push(data);
+      state.userText.push({text: userText, id: 'user'})
     },
     GET_ANSWERS(state, data) {
-      state.answers.push(data);
+      state.userText.push({text: data, id: 'computer'});
     },
     SAVE_NAME(state, name) {
       state.userName = name;

@@ -10,7 +10,7 @@
 <style>
 
 html {
-  background-color: aqua;
+  background-color: #dcdcdc;
   
 }
 
