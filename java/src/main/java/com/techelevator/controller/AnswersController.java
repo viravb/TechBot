@@ -30,9 +30,9 @@ public class AnswersController {
 
         String newSentence = "";
         if(sentence.substring(sentence.length() - 1).equals("=")) {
-            newSentence = sentence.substring(0, sentence.length() - 1);
+            newSentence = sentence.replace("=", "");
         }
-        String[] sentenceArray = newSentence.split(" ");
+        String[] sentenceArray = newSentence.split("\\+");
         List<String> stringList = List.of(sentenceArray);
         return stringList;
     }
@@ -43,7 +43,7 @@ public class AnswersController {
         String subjectType = "";
         for(String word : stringList) {
             for (Subject subject : subjects) {
-                if (word.equals(subject.getSubjectType())) {
+                if (word.equalsIgnoreCase(subject.getSubjectType())) {
                     subjectType = subject.getSubjectType();
                     break;
                 }
