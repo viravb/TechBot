@@ -7,6 +7,8 @@ public class Answers {
 
     private String description;
 
+    private String subjectType;
+
 
     public Answers () {
 
@@ -33,17 +35,12 @@ public class Answers {
         this.description = description;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Answers answers = (Answers) o;
-        return answerId == answers.answerId && Objects.equals(description, answers.description);
+    public String getSubjectType() {
+        return subjectType;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(answerId, description);
+    public void setSubjectType(String subjectType) {
+        this.subjectType = subjectType;
     }
 }
 

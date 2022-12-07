@@ -1,6 +1,6 @@
 <template>
   <div class="window">
-      <ComputerBubble />
+      <ComputerBubble v-for='answer in $store.state.answers' v-bind:key='answer.id' v-bind:answer='answer'/>
       <UserTextList v-for='text in $store.state.userText' v-bind:key='text.id' v-bind:text='text'/>
   </div>
 </template>
@@ -16,7 +16,9 @@ export default {
     UserTextList,
     
   },
-    name: "chat-window"
+    name: "chat-window",
+
+    
 
 }
 </script>
