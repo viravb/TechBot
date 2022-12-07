@@ -1,14 +1,10 @@
 package com.techelevator.model;
 
-import java.util.Objects;
-
 public class Answers {
+
     private int answerId;
-
     private String description;
-
     private String subjectType;
-
 
     public Answers () {
 

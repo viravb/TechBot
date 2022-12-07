@@ -1,28 +1,19 @@
 <template>
-  <div class="computer-bubble">
-      <p>Welcome, {{$store.state.userName}}</p>
-      <p>{{$store.state.answers}}</p>
+  <div class='greet'>
+    <div>
+      <p>{{`Welcome, ${$store.state.userName}`}}</p>
+    </div>
   </div>
 </template>
+
 <script>
-
 export default {
-    name: 'computer-bubble',
-    props: {
-        answer: String
-    },
-    data() {
-        return {
 
-        }
-    },
-
-    computed: {
-    }
 }
 </script>
+
 <style>
-.computer-bubble {
+div.greet {
     border: 2px solid black;
     border-radius: 5px;
     display: flex;
@@ -33,7 +24,7 @@ export default {
     height: 50px;
     background-color: lightgreen;
 }
-p {
+div.greet p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Zen Dots', cursive;
 }
