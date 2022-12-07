@@ -23,7 +23,6 @@ export default {
             AnswersService.getAnswers(this.userText).then(response => {
                 console.log(response.data)
                 this.$store.commit('GET_ANSWERS', response.data);
-                this.$store.commit('GET_COMPUTER', response.data);
             
                 
             }).catch(error => console.error(error));
