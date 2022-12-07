@@ -1,5 +1,6 @@
 <template>
   <div class="window">
+      <GreetUser />
       <ComputerBubble v-for='answer in $store.state.answers' v-bind:key='answer.id' v-bind:answer='answer'/>
       <UserTextList v-for='text in $store.state.userText' v-bind:key='text.id' v-bind:text='text'/>
   </div>
@@ -8,12 +9,14 @@
 <script>
 import ComputerBubble from './ComputerBubble.vue';
 import UserTextList from './UserTextList.vue';
+import GreetUser from './GreetUser.vue';
 
 
 export default {
   components: { 
     ComputerBubble, 
     UserTextList,
+    GreetUser
     
   },
     name: "chat-window",

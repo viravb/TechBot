@@ -4,11 +4,8 @@ import java.util.Objects;
 
 public class Subject {
 
-
     private int subjectId;
     private String subjectType;
-
-
 
     public Subject() {
 
