@@ -4,8 +4,7 @@ FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
 FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id
 
 START TRANSACTION;
-=======
->>>>>>> 9f5920c9eb6cde95cfcb8f7b15221f8741d95fd6
+
 
 DROP TABLE IF EXISTS cat_question, question_sub, sub_answer, users, categories, questions, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_cat_id, seq_question_id, seq_subject_id, seq_answer_id;
@@ -59,7 +58,7 @@ CREATE TABLE users (
 	role varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
-<<<<<<< HEAD
+
 										 
 INSERT INTO subjects (subject_type)
 VALUES ('networking'), ('resumes'), ('interviews'),('cover'), ('imposter'), ('stress'), ('job offer'), ('relocation'), ('elevator'), ('negotiation'), ('phone'), ('behavioral'),
@@ -167,7 +166,7 @@ INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (1,3), (
 														  (4,1), (4,2), (4,3), (4,4);
 														  
 INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,1), (2,2), (3,3), (3,4), (4,5);
->>>>>>> 9f5920c9eb6cde95cfcb8f7b15221f8741d95fd6
+
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
