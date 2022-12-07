@@ -17,7 +17,12 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     userName: '',
-    userText: [],
+    userText: [
+    {
+      text: "If you need help with what to ask please type help",
+      id: 'computer'
+    }
+  ],
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

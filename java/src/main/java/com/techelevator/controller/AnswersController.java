@@ -23,16 +23,22 @@ public class AnswersController {
     @RequestMapping(path="/answers", method = RequestMethod.POST)
     public String getAnswer(@RequestBody String sentence) {
 
-        return returnAnswer(getSubject(sentenceToArray(sentence)));
-    }
-
-    private List<String> sentenceToArray(String sentence) {
-
         String newSentence = "";
         if(sentence.substring(sentence.length() - 1).equals("=")) {
             newSentence = sentence.replace("=", "");
         }
-        String[] sentenceArray = newSentence.split("\\+");
+        if(newSentence.equalsIgnoreCase("help")) {
+            return "Here is help";
+        }
+
+        return returnAnswer(getSubject(sentenceToArray(newSentence)));
+    }
+
+    private List<String> sentenceToArray(String sentence) {
+
+
+
+        String[] sentenceArray = sentence.split("\\+");
         List<String> stringList = List.of(sentenceArray);
         return stringList;
     }

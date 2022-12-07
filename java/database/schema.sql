@@ -1,8 +1,11 @@
+<<<<<<< HEAD
 SELECT subject_type, description FROM subjects
 FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
 FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id
 
 START TRANSACTION;
+=======
+>>>>>>> 9f5920c9eb6cde95cfcb8f7b15221f8741d95fd6
 
 DROP TABLE IF EXISTS cat_question, question_sub, sub_answer, users, categories, questions, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_cat_id, seq_question_id, seq_subject_id, seq_answer_id;
@@ -56,6 +59,7 @@ CREATE TABLE users (
 	role varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
+<<<<<<< HEAD
 										 
 INSERT INTO subjects (subject_type)
 VALUES ('networking'), ('resumes'), ('interviews'),('cover'), ('imposter'), ('stress'), ('job offer'), ('relocation'), ('elevator'), ('negotiation'), ('phone'), ('behavioral'),
@@ -135,21 +139,39 @@ VALUES ('Get a to-do list and a timer.');
 
 INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,1), (2,2), (3,3), (4,4), (5,5), (6,6), (7,7), (8,8), (9,9), (10,10), (11,11), (12,12), (13,13), (14,14),(15,15), (16,16), (17,17),
 (18,18), (19,19), (20,20), (21,21);
+=======
+
+INSERT INTO categories (name) VALUES ('Pathway');
+
+INSERT INTO questions (question_text) VALUES ('I need help with'),
+											 ('Where can I learn about'),
+											 ('I dont understand'),
+											 ('What is');
+										   
+INSERT INTO answers (description) VALUES ('This is a good resource for learning about cover letters https://careercenter.umich.edu/article/cover-letters'),
+										 ('Here is a great resource for learning about job interviews https://careercenter.umich.edu/article/interviewing-resources'),
+										 ('Here is a resource on what to wear to an interview https://www.thebalancemoney.com/best-interview-attire-for-every-type-of-interview-2061364#:~:text=For%20women%2C%20a%20blouse%20and,will%20distract%20the%20hiring%20manager.'),
+										 ('Here is another resource on what to wear to an interview https://cultivatedculture.com/what-to-wear-to-an-interview/'),
+        								 ('Here is a resource on the top 30 STAR questions https://www.themuse.com/advice/behavioral-interview-questions-answers-examples');
+									
+INSERT INTO answers (description) VALUES ('This is a good resource for learning about cover letters https://careercenter.umich.edu/article/cover-letters'),
+										 ('Here is a great resource for learning about job interviews https://careercenter.umich.edu/article/interviewing-resources'),
+										 ('Here is a resource on what to wear to an interview https://www.thebalancemoney.com/best-interview-attire-for-every-type-of-interview-2061364#:~:text=For%20women%2C%20a%20blouse%20and,will%20distract%20the%20hiring%20manager.'),
+										 ('Here is another resource on what to wear to an interview https://cultivatedculture.com/what-to-wear-to-an-interview/'),
+										 ('Here is a resource on the top 30 STAR questions https://www.themuse.com/advice/behavioral-interview-questions-answers-examples'),
+										 ('Goodbye');
+
+INSERT INTO cat_question (cat_id, question_id) VALUES (1,1), (1,2), (1,3), (1,4);
+
+INSERT INTO question_sub (question_id, subject_id) VALUES (1,1), (1,2), (1,3), (1,4), (2,1), (2,2), (2,3), (2,4), (3,1), (3,2), (3,3), (3,4),
+														  (4,1), (4,2), (4,3), (4,4);
+														  
+INSERT INTO sub_answer (subject_id, answer_id) VALUES (1,1), (2,2), (3,3), (3,4), (4,5);
+>>>>>>> 9f5920c9eb6cde95cfcb8f7b15221f8741d95fd6
 
 INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER');
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
 
 
-
-
 COMMIT TRANSACTION;
-
-
-SELECT categories.name, question_text, subject_type, description FROM categories
-FULL OUTER JOIN cat_question ON categories.cat_id = cat_question.cat_id
-FULL OUTER JOIN questions ON cat_question.question_id = questions.question_id
-FULL OUTER JOIN question_sub ON questions.question_id = question_sub.question_id
-FULL OUTER JOIN subjects ON question_sub.subject_id = subjects.subject_id
-FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
-FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id

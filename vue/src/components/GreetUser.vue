@@ -18,7 +18,7 @@ div.greet {
     border-radius: 5px;
     display: flex;
     margin-right: 35%;
-    margin-left: 2%;
+    margin-left: 4.5%;
     margin-top: 2%;
     justify-content: flex-start;
     height: 50px;

@@ -2,7 +2,9 @@
   <div class="user-text-list">
     <ul>
       <li v-for='text in $store.state.userText' v-bind:key='text.index' v-bind:class='text.id'>
-        <p>{{text.text}}</p>
+        <p>
+          <span>{{text.text}}</span>
+        </p>
       </li>
     </ul>
   </div>
@@ -20,28 +22,37 @@ export default {
 </script>
 
 <style>
+div.user-text-list ul {
+  list-style-type: none;
+  
+}
+
+span{
+  width:100%;
+  height:1em;
+  display:inline-block;
+}
 
 .user {
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-left: 35%;
-    margin-right: 2%;
-    margin-top: 2%;
-    text-align: center;
-    
-    height: 50px;
-    background-color: lightblue;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-left: 30%;
+  margin-right: 2%;
+  margin-top: 2%;
+  height: 50px;
+  background-color: lightblue;
+  box-shadow: 10px 10px 5px #AAAAAA;
 }
 
 .computer{
-    border: 2px solid black;
-    border-radius: 5px;
-    margin-right: 35%;
-    margin-left: 2%;
-    margin-top: 2%;
-    justify-content: flex-start;
-    height: 50px;
-    background-color: lightgreen;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-right: 30%;
+  margin-left: 2%;
+  margin-top: 2%;
+  height: auto;
+  background-color: lightgreen;
+  box-shadow: 10px 10px 5px #AAAAAA;
 }
 p {
     font-family: 'Oswald', sans-serif;
