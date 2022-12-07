@@ -27,9 +27,6 @@ public class AnswersController {
         if(sentence.substring(sentence.length() - 1).equals("=")) {
             newSentence = sentence.replace("=", "");
         }
-        if(newSentence.equalsIgnoreCase("help")) {
-            return "Here is help";
-        }
 
         return returnAnswer(getSubject(sentenceToArray(newSentence)));
     }

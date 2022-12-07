@@ -27,8 +27,7 @@ export default {
   border-radius: 10px;
   height: 700px;
   margin: 20px 20px 5px 20px;
-  background-color: white;
+  background-color: rgb(233, 233, 243);
   overflow: auto;
 }
-
 </style>

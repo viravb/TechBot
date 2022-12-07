@@ -10,7 +10,7 @@
 <style>
 
 html {
-  background-color: #dcdcdc;
+  background-color: white;
   
 }
 
