@@ -4,10 +4,10 @@ import axios from "axios";
 
 export default {
 
+
     getAnswers(keyword) {
-        
-     return axios.post('/answers', keyword);
-     
-        
-    }
+      
+        return axios.get('/answers/', keyword);
+
+}
 }

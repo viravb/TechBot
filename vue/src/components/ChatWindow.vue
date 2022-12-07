@@ -22,7 +22,7 @@ export default {
 
 <style>
 .window {
-  border: 4px solid black;
+  border: 0px solid black;
   border-radius: 10px;
   height: 700px;
   margin: 20px 20px 5px 20px;

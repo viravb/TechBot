@@ -1,8 +1,7 @@
 <template>
   <div class="computer-bubble">
-      <div v-show='$store.state.answers.length > 0'>
-        <p>{{answer}}</p>  
-      </div>
+      <p>Welcome, {{$store.state.userName}}</p>
+      <p>{{$store.state.answers}}</p>
   </div>
 </template>
 <script>
