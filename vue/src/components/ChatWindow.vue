@@ -1,5 +1,5 @@
 <template>
-  <div class="window">
+  <div class="window" >
       <GreetUser />
       <UserTextList />
   </div>
@@ -16,7 +16,8 @@ export default {
     GreetUser
     
   },
-    name: "chat-window"
+    name: "chat-window",
+  
 }
 </script>
 
