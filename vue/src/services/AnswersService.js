@@ -7,7 +7,7 @@ export default {
 
     getAnswers(keyword) {
       
-        return axios.get('/answers/', keyword);
+        return axios.post('/answers/', keyword);
 
 }
 }

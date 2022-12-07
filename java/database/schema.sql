@@ -1,9 +1,3 @@
-SELECT subject_type, description FROM subjects
-FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
-FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id
-
-SELECT * FROM subjects
-
 
 DROP TABLE IF EXISTS cat_question, question_sub, sub_answer, users, categories, questions, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_cat_id, seq_question_id, seq_subject_id, seq_answer_id;
@@ -112,18 +106,12 @@ INSERT INTO questions (question_text) VALUES ('I need help with'),
 											 ('Where can I learn about'),
 											 ('I dont understand'),
 											 ('What is');
-											 
-INSERT INTO subjects (subject_type) VALUES ('writing a cover letter'),
-										   ('prepping for an interview'),
-										   ('folllwing up with employers'),
-										   ('what to wear to an interview'),
-										   ('common STAR questions');
 										   
 INSERT INTO answers (description) VALUES ('This is a good resource for learning about cover letters https://careercenter.umich.edu/article/cover-letters'),
 										 ('Here is a great resource for learning about job interviews https://careercenter.umich.edu/article/interviewing-resources'),
 										 ('Here is a resource on what to wear to an interview https://www.thebalancemoney.com/best-interview-attire-for-every-type-of-interview-2061364#:~:text=For%20women%2C%20a%20blouse%20and,will%20distract%20the%20hiring%20manager.'),
 										 ('Here is another resource on what to wear to an interview https://cultivatedculture.com/what-to-wear-to-an-interview/'),
-        									 ('Here is a resource on the top 30 STAR questions https://www.themuse.com/advice/behavioral-interview-questions-answers-examples');
+        								 ('Here is a resource on the top 30 STAR questions https://www.themuse.com/advice/behavioral-interview-questions-answers-examples');
 									
 INSERT INTO answers (description) VALUES ('This is a good resource for learning about cover letters https://careercenter.umich.edu/article/cover-letters'),
 										 ('Here is a great resource for learning about job interviews https://careercenter.umich.edu/article/interviewing-resources'),
@@ -148,15 +136,4 @@ VALUES ('networking'), ('resumes'), ('interviews'),('cover'), ('imposter'), ('st
 
 
 
-
-
 COMMIT TRANSACTION;
-
-
-SELECT categories.name, question_text, subject_type, description FROM categories
-FULL OUTER JOIN cat_question ON categories.cat_id = cat_question.cat_id
-FULL OUTER JOIN questions ON cat_question.question_id = questions.question_id
-FULL OUTER JOIN question_sub ON questions.question_id = question_sub.question_id
-FULL OUTER JOIN subjects ON question_sub.subject_id = subjects.subject_id
-FULL OUTER JOIN sub_answer ON subjects.subject_id = sub_answer.subject_id
-FULL OUTER JOIN answers ON sub_answer.answer_id = answers.answer_id
