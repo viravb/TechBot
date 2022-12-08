@@ -1,5 +1,5 @@
 START TRANSACTION;
-
+ROLLBACK;
 DROP TABLE IF EXISTS sub_answer, users, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_subject_id, seq_answer_id;
 
@@ -142,5 +142,7 @@ INSERT INTO users (username,password_hash,role) VALUES ('user','$2a$08$UkVvwpULi
 INSERT INTO users (username,password_hash,role) VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN');
 
 COMMIT TRANSACTION;
+
+SELECT * FROM answers
 
 

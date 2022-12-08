@@ -40,7 +40,8 @@ export default {
             }).catch(error => console.error(error));
 
             this.userText = '';
-        },
+            
+        }
     }
 }
 </script>
