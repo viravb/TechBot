@@ -3,10 +3,9 @@
     <ul>
      
       <li v-for='text in $store.state.userText' v-bind:key='text.index'  v-bind:class='text.id'>
-        <p> 
-           <span>{{text.text}}</span> 
+        <p>
+          <span v-html = "text.text">{{text.text}}</span> 
         </p>
-        
       </li>
     </ul>
   </div>
@@ -19,7 +18,6 @@
 export default {
   name: 'user-text-list',
   props: {text: Object},
-      
 }
 </script>
 
