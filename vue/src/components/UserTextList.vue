@@ -34,7 +34,7 @@ span{
 }
 
 .user {
-  border: 2px solid black;
+  border: 1px solid lightblue;
   border-radius: 5px;
   margin-left: 30%;
   margin-right: 2%;
@@ -45,7 +45,7 @@ span{
 }
 
 .computer{
-  border: 2px solid black;
+  border: 1px solid lightgreen;
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;
