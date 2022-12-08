@@ -1,5 +1,3 @@
-START TRANSACTION;
-
 DROP TABLE IF EXISTS subby_toppy, topic, sub_topic
 DROP SEQUENCE IF EXISTS seq_topic_id, seq_sub_id 
 
@@ -50,7 +48,3 @@ INSERT INTO subby_toppy (topic_id, sub_id)
 VALUES   (1, 1), (2, 2);
 
 COMMIT TRANSACTION;
-
-SELECT * FROM answers
-
-

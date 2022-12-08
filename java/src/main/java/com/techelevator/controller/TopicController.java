@@ -28,8 +28,8 @@ public class TopicController {
         String newSentence = "";
 
 
-        if(sentence.contains("=")) {
-            newSentence = sentence.replace("=", "+");
+        if(sentence.substring(sentence.length() - 1).equals("=")) {
+            newSentence = sentence.replace("=", "");
         } else {
             newSentence = sentence;
         }
@@ -40,44 +40,38 @@ public class TopicController {
 
         String[] sentenceArray = sentence.split("\\+");
         String topic = sentenceArray[sentenceArray.length - 1];
-        List<String> stringList = List.of(sentenceArray);
-        if(topic.equals(userTopic)) {
-            stringList.remove(stringList.indexOf(topic));
-        }
+        List<String> stringList = new java.util.ArrayList<>(List.of(sentenceArray));
+        userTopic = topic;
+        stringList.remove(stringList.size() - 1);
         return stringList;
     }
 
     private PassedObject getExactTopic(List<String> stringList) {
         List<Topic> topics = topicDao.getTopics();
+        List<SubTopic> subTopics = subTopicDao.getSubTopics(userTopic);
         PassedObject passedObject = new PassedObject();
 
+        passedObject.setCurrentTopic(userTopic);
+        passedObject.setAnswer("That is an invalid question");
+
         for(String word : stringList) {
-            for (Topic topic : topics) {
-                if (word.equalsIgnoreCase(topic.getTopicName())) {
-                    passedObject.setAnswer(topic.getTopicAnswer());
-                    passedObject.setCurrentTopic(topic.getTopicName());
+            for(SubTopic subTopic : subTopics) {
+                if (word.equalsIgnoreCase(subTopic.getSubName())) {
+                    passedObject.setAnswer(subTopic.getSubAnswer());
+                    passedObject.setCurrentTopic(userTopic);
                     break;
                 } else {
-                     passedObject.setCurrentTopic(userTopic);
-                     passedObject.setAnswer(returnSubTopicAnswer(word, userTopic));
+                    for (Topic topic : topics) {
+                        if (word.equalsIgnoreCase(topic.getTopicName())) {
+                            passedObject.setAnswer(topic.getTopicAnswer());
+                            passedObject.setCurrentTopic(topic.getTopicName());
+                            break;
+                        }
+                    }
                 }
             }
         }
         return passedObject;
     }
-
-    private String returnSubTopicAnswer(String word, String userTopic) {
-        List<SubTopic> subTopics = subTopicDao.getSubTopics(userTopic);
-        PassedObject passedObject = new PassedObject();
-
-        String answer = "Not A Valid Question";
-        for(SubTopic subTopic : subTopics) {
-            if(word.equalsIgnoreCase(subTopic.getSubName())) {
-                answer = subTopic.getSubAnswer();
-            }
-        }
-        return answer;
-    }
-
 
 }

@@ -5,9 +5,9 @@ import axios from "axios";
 export default {
 
 
-    getAnswers(keyword) {
+    getAnswers(userInput) {
       
-        return axios.post('/answers/', keyword);
+        return axios.post('/answers/', userInput);
 
 }
 }

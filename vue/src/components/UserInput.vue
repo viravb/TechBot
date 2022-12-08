@@ -19,10 +19,10 @@ export default {
     methods : {
         
         filteredKeyWord() {
+            let sentenceToSend = `${this.userText} ${this.$store.state.currentTopic}`;
             this.$store.commit('SAVE_TEXT', this.userText);
 
-            AnswersService.getAnswers(this.userText).then(response => {
-
+            AnswersService.getAnswers(sentenceToSend).then(response => {
                 // var regex = /(https?:\/\/[^ ]*)/
 
                 // if(response.data.includes("http")){
@@ -34,11 +34,11 @@ export default {
                 // this.$store.commit('SAVE_LINK', StringURL);
                 // } 
                 // else if (response.data) {
-                    this.$store.commit('GET_ANSWERS',response.data);
+                    this.$store.commit('GET_ANSWERS', response.data);
                 //}
                 
             }).catch(error => console.error(error));
-
+            
             this.userText = '';
             
         }

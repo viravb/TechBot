@@ -18,6 +18,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     userName: '',
     linkURL: '',
+    currentTopic: ' ',
     userText: [
     {
       text: "If you need help with what to ask please type help",
@@ -47,7 +48,8 @@ export default new Vuex.Store({
       state.userText.push({text: userText, id: 'user'})
     },
     GET_ANSWERS(state, data) {
-      state.userText.push({text: data, id: 'computer'});
+      state.userText.push({text: data.answer, id: 'computer'});
+      state.currentTopic = data.currentTopic;
     },
     SAVE_NAME(state, name) {
       state.userName = name;
