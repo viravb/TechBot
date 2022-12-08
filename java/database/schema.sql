@@ -3,6 +3,7 @@ ROLLBACK;
 DROP TABLE IF EXISTS sub_answer, users, subjects, answers;
 DROP SEQUENCE IF EXISTS seq_user_id, seq_subject_id, seq_answer_id;
 
+
 CREATE SEQUENCE seq_subject_id
   INCREMENT BY 1
   NO MAXVALUE
