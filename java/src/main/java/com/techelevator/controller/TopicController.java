@@ -55,16 +55,16 @@ public class TopicController {
         passedObject.setAnswer("That is an invalid question");
 
         for(String word : stringList) {
-            for(SubTopic subTopic : subTopics) {
-                if (word.equalsIgnoreCase(subTopic.getSubName())) {
-                    passedObject.setAnswer(subTopic.getSubAnswer());
-                    passedObject.setCurrentTopic(userTopic);
+            for (Topic topic : topics) {
+                if (word.equalsIgnoreCase(topic.getTopicName())) {
+                    passedObject.setAnswer(topic.getTopicAnswer());
+                    passedObject.setCurrentTopic(topic.getTopicName());
                     break;
                 } else {
-                    for (Topic topic : topics) {
-                        if (word.equalsIgnoreCase(topic.getTopicName())) {
-                            passedObject.setAnswer(topic.getTopicAnswer());
-                            passedObject.setCurrentTopic(topic.getTopicName());
+                    for(SubTopic subTopic : subTopics){
+                        if (word.equalsIgnoreCase(subTopic.getSubName())) {
+                            passedObject.setAnswer(subTopic.getSubAnswer());
+                            passedObject.setCurrentTopic(userTopic);
                             break;
                         }
                     }
