@@ -5,7 +5,6 @@
         <p>
           <span>{{text.text}}</span>
         </p>
-        
       </li>
     </ul>
   </div>
@@ -18,7 +17,6 @@
 export default {
   name: 'user-text-list',
   props: {text: Object},
-      
 }
 </script>
 
