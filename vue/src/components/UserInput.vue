@@ -23,24 +23,25 @@ export default {
 
             AnswersService.getAnswers(this.userText).then(response => {
 
-                var regex = /(https?:\/\/[^ ]*)/
+                // var regex = /(https?:\/\/[^ ]*)/
 
-                if(response.data.includes("http")){
-                let StringURL = response.data.match(regex)[1];
-                console.log(URL)
-                var stringResponse = response.data.substring(0,response.data.indexOf("http"))
+                // if(response.data.includes("http")){
+                // let StringURL = response.data.match(regex)[1];
+                // console.log(URL)
+                // var stringResponse = response.data.substring(0,response.data.indexOf("http"))
 
-                this.$store.commit('GET_ANSWERS', stringResponse);
-                this.$store.commit('SAVE_LINK', StringURL);
-                } 
-                else if (response.data) {
+                // this.$store.commit('GET_ANSWERS', stringResponse);
+                // this.$store.commit('SAVE_LINK', StringURL);
+                // } 
+                // else if (response.data) {
                     this.$store.commit('GET_ANSWERS',response.data);
-                }
+                //}
                 
             }).catch(error => console.error(error));
 
             this.userText = '';
-        },
+            
+        }
     }
 }
 </script>

@@ -7,7 +7,6 @@ import com.techelevator.model.SubTopic;
 import com.techelevator.model.Topic;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController

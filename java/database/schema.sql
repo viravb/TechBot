@@ -51,4 +51,6 @@ VALUES   (1, 1), (2, 2);
 
 COMMIT TRANSACTION;
 
+SELECT * FROM answers
+
 
