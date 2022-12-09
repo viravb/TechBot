@@ -1,5 +1,5 @@
 <template>
-  <div class="window">
+  <div class="window" >
       <GreetUser />
       <UserTextList />
   </div>
@@ -16,7 +16,8 @@ export default {
     GreetUser
     
   },
-    name: "chat-window"
+    name: "chat-window",
+  
 }
 </script>
 
@@ -29,5 +30,4 @@ export default {
   background-color: rgb(233, 233, 243);
   overflow: auto;
 }
-
 </style>

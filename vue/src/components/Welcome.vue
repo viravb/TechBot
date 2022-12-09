@@ -30,15 +30,17 @@ export default {
 </script>
 
 <style>
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
 div.welcome h1 {
     text-decoration: none;
     font-size: 30px;
 }
-
 div.welcome form {
     margin-top: 15px;
     text-align: center;
@@ -48,7 +50,10 @@ div.welcome form {
   margin: 8px 0;
   box-sizing: border-box;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
 button{
   font-family: 'Ubuntu', sans-serif;
     position: absolute;
@@ -69,19 +74,26 @@ button{
   overflow: hidden;
   transition: all .35s;
 }
+<<<<<<< HEAD
 
 input[type=text] {
   background-color: #c3f1e1;
+=======
+input[type=text] {
+  background-color: #C3F1E1;
+>>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
   color: black;
   border: none;
   height: 40px;
   width: 500px;
   font-size: 20px;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
 button:hover{
   background: #8C82FC;
   color: #fff;
 }
-
 </style>
