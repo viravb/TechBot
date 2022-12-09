@@ -18,7 +18,7 @@ export default new Vuex.Store({
     user: currentUser || {},
     userName: '',
     linkURL: '',
-    currentTopic: ' ',
+    currentTopic: 'empty',
     userText: [
     {
       text: "If you need help with what to ask please type help",

@@ -42,6 +42,7 @@ public class TopicController {
         String topic = sentenceArray[sentenceArray.length - 1];
         List<String> stringList = new java.util.ArrayList<>(List.of(sentenceArray));
         userTopic = topic;
+
         stringList.remove(stringList.size() - 1);
         return stringList;
     }
