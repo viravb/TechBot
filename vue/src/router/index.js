@@ -6,6 +6,7 @@ import Logout from '../views/Logout'
 import Register from '../views/Register'
 import store from '../store/index'
 import Welcome from '../views/Welcome'
+import EndChat from '../views/EndChat'
 
 Vue.use(Router)
 
@@ -37,6 +38,11 @@ const router = new Router({
       meta: {
         requiresAuth: true
       }
+    },
+    {
+      path: '/end',
+      name: 'end',
+      component: EndChat
     },
     {
       path: "/login",

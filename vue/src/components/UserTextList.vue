@@ -1,7 +1,6 @@
 <template>
   <div class="user-text-list">
     <ul>
-     
       <li v-for='text in $store.state.userText' v-bind:key='text.index'  v-bind:class='text.id'>
         <p>
           <span v-html = "text.text">{{text.text}}</span> 
@@ -11,9 +10,7 @@
   </div>
 </template>
 
-
 <script>
-
 
 export default {
   name: 'user-text-list',

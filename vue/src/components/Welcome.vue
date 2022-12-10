@@ -1,10 +1,15 @@
 <template>
-  <div class='welcome'>
-      <h1>Please enter your name :</h1>
-      <form class='user-name'>
-          <input type='text' v-model='name' required/>
-          <button type="submit" v-on:click.stop.prevent='submit()'>Submit</button>
-      </form>
+  <div class='full'>
+    <div class='welcome'>
+      <img class="header" src="https://i0.wp.com/www.jamiesale-cartoonist.com/wp-content/uploads/cartoon-robot-free.png?ssl=1" alt="">
+        <h1 class='intro'>Welcome To TechBot!</h1>
+        <h1>To Visit The ChatBot Please Enter Your Name :</h1>
+        <form class='user-name'>
+            <input type='text' v-model='name' placeholder='Your Name Here' required/>
+            <input type='text' v-model='email' placeholder='Your Email Here' required/>
+            <button type="submit" v-on:click.stop.prevent='submit()'>Submit</button>
+        </form>
+    </div>
   </div>
 </template>
 
@@ -13,7 +18,8 @@ export default {
     name: 'welcome',
     data() {
         return {
-            name: ''
+            name: '',
+            email: ''
         }
     },
     methods: {
@@ -22,6 +28,7 @@ export default {
                 alert("Please Enter A Name")
             } else {
                 this.$store.commit('SAVE_NAME', this.name); 
+                this.$store.commit('SAVE_EMAIL', this.email)
                 this.$router.push('/home');
             }
         },
@@ -30,33 +37,33 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
 
-
-
-
-=======
->>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
-div.welcome h1 {
-    text-decoration: none;
-    font-size: 30px;
+div.full {
+ height: 100vh;
 }
+
+div.welcome h1 {
+  text-decoration: none;
+  font-size: 30px;
+}
+
 div.welcome form {
-    margin-top: 15px;
-    text-align: center;
-      width: 100%;
+  margin-top: 15px;
+  text-align: center;
+  width: 100%;
   padding: 12px 20px;
   padding-top: 40px;
   margin: 8px 0;
   box-sizing: border-box;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
+div.welcome h1.intro {
+  font-size: 40px;
+}
+
 button{
   font-family: 'Ubuntu', sans-serif;
-    position: absolute;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -74,24 +81,23 @@ button{
   overflow: hidden;
   transition: all .35s;
 }
-<<<<<<< HEAD
+
 
 input[type=text] {
   background-color: #c3f1e1;
-=======
+}
 input[type=text] {
   background-color: #C3F1E1;
->>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
   color: black;
   border: none;
+  margin-left: 20px;
   height: 40px;
   width: 500px;
   font-size: 20px;
+  border: 2px solid black;
+  border-radius: 5px;
 }
-<<<<<<< HEAD
 
-=======
->>>>>>> 8915e789803aee235bf9b937d10bb9667200c620
 button:hover{
   background: #8C82FC;
   color: #fff;

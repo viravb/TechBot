@@ -1,5 +1,5 @@
 <template>
-  <div class="window" >
+  <div class="window">
       <GreetUser />
       <UserTextList />
   </div>
@@ -11,13 +11,11 @@ import GreetUser from './GreetUser.vue';
 
 
 export default {
+  name: "chat-window",
   components: { 
     UserTextList,
     GreetUser
-    
   },
-    name: "chat-window",
-  
 }
 </script>
 
@@ -30,4 +28,5 @@ export default {
   background-color: rgb(233, 233, 243);
   overflow: auto;
 }
+
 </style>

@@ -257,6 +257,27 @@ Rows represent individual records and consist of many attributes organized using
 <a href=https://www.javatpoint.com/what-is-database target=""_blank"">Here</a> is a link to understand more about a database
 </p>');
 
+INSERT INTO topic (topic_name, topic_answer) ------ 17
+VALUES ('help', '<p>
+Here are some topics I can help with:
+<ul>
+<li>&#x2022; Pathway (Career Development)</li>
+<li>&#x2022; Curriculum (Technical Topics)</li>
+<li>&#x2022; Motivational Quotes to keep you going!</li>
+<li>&#x2022; Open job positions</li>
+<br>
+You can ask questions like the below:
+<br>
+<li>&#x2022; How do I write a resume?</li>
+<li>&#x2022; What is a loop? </li>
+<li>&#x2022; How do I prepare for an interview?</li>
+<li>&#x2022; How do I work with recruiters?</li>
+<li>&#x2022; Help me find an open job position</li>
+</ul>
+Please ask me about only one sub-topic at a time
+</p>
+');
+
 INSERT INTO sub_topic (sub_name, sub_answer) ------ (1, 1)
 VALUES ('tip', '<p>
 <ul>
