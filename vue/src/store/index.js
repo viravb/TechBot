@@ -9,6 +9,7 @@ Vue.use(Vuex)
  */
 const currentToken = localStorage.getItem('token')
 const currentUser = JSON.parse(localStorage.getItem('user'));
+
 if(currentToken != null) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
 }
@@ -17,7 +18,8 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     userName: '',
-    linkURL: "",
+    linkURL: '',
+    currentTopic: 'empty',
     userText: [
     {
       text: "If you need help with what to ask please type help",
@@ -47,7 +49,8 @@ export default new Vuex.Store({
       state.userText.push({text: userText, id: 'user'})
     },
     GET_ANSWERS(state, data) {
-      state.userText.push({text: data, id: 'computer'});
+      state.userText.push({text: data.answer, id: 'computer'});
+      state.currentTopic = data.currentTopic;
     },
     SAVE_NAME(state, name) {
       state.userName = name;

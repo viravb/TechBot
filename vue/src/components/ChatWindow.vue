@@ -1,5 +1,5 @@
 <template>
-  <div class="window" >
+  <div class="window">
       <GreetUser />
       <UserTextList />
 
@@ -13,16 +13,11 @@ import GreetUser from './GreetUser.vue';
 
 
 export default {
+  name: "chat-window",
   components: { 
     UserTextList,
     GreetUser
-    
   },
-    name: "chat-window",
-    created(){
-      this.$nextTick
-  }
-  
 }
 
 </script>
@@ -38,6 +33,5 @@ export default {
   box-shadow: 10px 10px 5px black;
   opacity:60%;
 }
-
 
 </style>

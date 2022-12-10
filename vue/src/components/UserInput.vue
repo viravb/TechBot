@@ -23,10 +23,11 @@ export default {
         filteredKeyWord() {
             let sentenceToSend = `${this.userText} ${this.$store.state.currentTopic}`;
             this.$store.commit('SAVE_TEXT', this.userText);
+
             AnswersService.getAnswers(sentenceToSend).then(response => {
-                this.computerResponse = response.data.answer;
                 this.$store.commit('GET_ANSWERS', response.data);
             }).catch(error => console.error(error));
+            
             this.userText = '';
         },
         startTxtToSpeech() {

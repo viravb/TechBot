@@ -17,7 +17,7 @@ export default {
     UserInput,
     SiteIntro
   },
-  name: "home"
+  name: "home",
 }
 </script>
 <style >
