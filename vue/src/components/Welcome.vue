@@ -12,7 +12,6 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
     name: 'welcome',
@@ -35,18 +34,14 @@ export default {
     }
 }
 </script>
-
 <style>
-
 div.full {
  height: 100vh;
 }
-
 div.welcome h1 {
   text-decoration: none;
   font-size: 30px;
 }
-
 div.welcome form {
   margin-top: 15px;
   text-align: center;
@@ -60,7 +55,6 @@ div.welcome form {
 div.welcome h1.intro {
   font-size: 40px;
 }
-
 button{
   font-family: 'Ubuntu', sans-serif;
   position: absolute;
@@ -97,7 +91,6 @@ input[type=text] {
   border: 2px solid black;
   border-radius: 5px;
 }
-
 button:hover{
   background: #8C82FC;
   color: #fff;

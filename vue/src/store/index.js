@@ -9,7 +9,6 @@ Vue.use(Vuex)
  */
 const currentToken = localStorage.getItem('token')
 const currentUser = JSON.parse(localStorage.getItem('user'));
-
 if(currentToken != null) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
 }
@@ -27,7 +26,6 @@ export default new Vuex.Store({
       text: "If you need help with what to ask please type help",
       id: 'computer'
     },
-    
   ],
   },
   mutations: {
