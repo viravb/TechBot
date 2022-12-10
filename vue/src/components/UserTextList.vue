@@ -9,7 +9,8 @@
         
       </li>
     </ul>
-  </div>
+  </div> 
+  
 </template>
 
 
@@ -39,18 +40,19 @@ span{
   margin-right: 2%;
   margin-top: 2%;
   height: 50px;
-  background-color: lightblue;
-  box-shadow: 10px 10px 5px #AAAAAA;
+  background-color: #5ff341; 
+  opacity:60%;
+  box-shadow: 10px 10px 5px black;
 }
 .computer{
-  border: 1px solid lightgreen;
+  border: 1px solid ;
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;
   margin-top: 2%;
   height: auto;
-  background-color: lightgreen;
-  box-shadow: 10px 10px 5px #AAAAAA;
+  background-color: #dedfec;
+  box-shadow: 10px 10px 5px #0C0C0D;
 }
 p {
     font-family: 'Oswald', sans-serif;

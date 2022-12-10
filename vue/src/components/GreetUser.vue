@@ -22,8 +22,9 @@ div.greet {
     margin-top: 2%;
     justify-content: flex-start;
     height: 50px;
-    background-color: lightgreen;
-    box-shadow: 10px 10px 5px #AAAAAA;
+    background-color: #dedfec; 
+    box-shadow: 10px 10px 5px;
+    
 }
 div.greet p {
     font-family: 'Oswald', sans-serif;

@@ -2,6 +2,8 @@
   <div class="window" >
       <GreetUser />
       <UserTextList />
+
+   
   </div>
 </template>
 
@@ -17,8 +19,12 @@ export default {
     
   },
     name: "chat-window",
+    created(){
+      this.$nextTick
+  }
   
 }
+
 </script>
 
 <style>
@@ -27,7 +33,11 @@ export default {
   border-radius: 10px;
   height: 700px;
   margin: 20px 20px 5px 20px;
-  background-color: rgb(233, 233, 243);
+  background-color: #0C0C0D;
   overflow: auto;
+  box-shadow: 10px 10px 5px black;
+  opacity:60%;
 }
+
+
 </style>
