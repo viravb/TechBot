@@ -6,18 +6,19 @@
         <h1>To Visit The ChatBot Please Enter Your Name :</h1>
         <form class='user-name'>
             <input type='text' v-model='name' placeholder='Your Name Here' required/>
+            <input type='text' v-model='email' placeholder='Your Email Here' required/>
             <button type="submit" v-on:click.stop.prevent='submit()'>Submit</button>
         </form>
     </div>
   </div>
 </template>
-
 <script>
 export default {
     name: 'welcome',
     data() {
         return {
-            name: ''
+            name: '',
+            email: ''
         }
     },
     methods: {
@@ -25,25 +26,22 @@ export default {
             if(this.name == '') {
                 alert("Please Enter A Name")
             } else {
-                this.$store.commit('SAVE_NAME', this.name); 
+                this.$store.commit('SAVE_NAME', this.name);
+                this.$store.commit('SAVE_EMAIL', this.email)
                 this.$router.push('/home');
             }
         },
     }
 }
 </script>
-
 <style>
-
 div.full {
  height: 100vh;
 }
-
 div.welcome h1 {
   text-decoration: none;
   font-size: 30px;
 }
-
 div.welcome form {
   margin-top: 15px;
   text-align: center;
@@ -56,7 +54,6 @@ div.welcome form {
 div.welcome h1.intro {
   font-size: 40px;
 }
-
 button{
   font-family: 'Ubuntu', sans-serif;
   position: absolute;
@@ -77,18 +74,20 @@ button{
   overflow: hidden;
   transition: all .35s;
 }
-
+input[type=text] {
+  background-color: #C3F1E1;
+}
 input[type=text] {
   background-color: #C3F1E1;
   color: black;
   border: none;
+  margin-left: 20px;
   height: 40px;
   width: 500px;
   font-size: 20px;
   border: 2px solid black;
   border-radius: 5px;
 }
-
 button:hover{
   background: #8C82FC;
   color: #fff;

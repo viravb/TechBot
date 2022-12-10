@@ -9,7 +9,6 @@ Vue.use(Vuex)
  */
 const currentToken = localStorage.getItem('token')
 const currentUser = JSON.parse(localStorage.getItem('user'));
-
 if(currentToken != null) {
   axios.defaults.headers.common['Authorization'] = `Bearer ${currentToken}`;
 }
@@ -18,6 +17,7 @@ export default new Vuex.Store({
     token: currentToken || '',
     user: currentUser || {},
     userName: '',
+    userEmail: '',
     linkURL: '',
     currentTopic: 'empty',
     userText: [
@@ -25,7 +25,6 @@ export default new Vuex.Store({
       text: "If you need help with what to ask please type help",
       id: 'computer'
     },
-    
   ],
   },
   mutations: {
@@ -54,6 +53,9 @@ export default new Vuex.Store({
     },
     SAVE_NAME(state, name) {
       state.userName = name;
+    },
+    SAVE_EMAIL(state, email) {
+      state.userEmail = email;
     },
     SAVE_LINK(state, urlFromResponse){
       state.linkURL = urlFromResponse;
