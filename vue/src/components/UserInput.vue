@@ -2,13 +2,17 @@
   <div class="user-input">
         <button class="speech-to-txt" @click="startTxtToSpeech">Speech to txt</button>
         <button class="txt-to-speech" @click="startSpeechToTxt">Txt to speech </button>
-        <form v-on:submit.prevent='filteredKeyWord()'>
+        <button class="MotivationalQuotes" @click="buttonQuote">Motivational Quotes </button>
+        
+        <form v-on:submit.prevent='filteredKeyWord()'> 
             <input class="user-text" type="text" v-model='userText'>
         </form>
   </div>
 </template>
 <script>
 import AnswersService from '@/services/AnswersService';
+import QuoteService from '@/services/QuoteService';
+
 export default {
     name: "user-input",
     data() {
@@ -16,7 +20,8 @@ export default {
             userText: '',
             runtimeTranscription_: '',
             computerResponse: '',
-            lang_: 'en'
+            lang_: 'en',
+            quote: ''
         }
     },
     methods : {
@@ -25,11 +30,18 @@ export default {
             this.$store.commit('SAVE_TEXT', this.userText);
 
             AnswersService.getAnswers(sentenceToSend).then(response => {
+                this.computerResponse = response.data.answer;
                 this.$store.commit('GET_ANSWERS', response.data);
             }).catch(error => console.error(error));
-            
             this.userText = '';
         },
+
+        buttonQuote(){
+            QuoteService.getQuote().then(response=>{
+            this.$store.commit('SAVE_QUOTE',response.data);
+        })
+        },
+
         startTxtToSpeech() {
             window.SpeechRecognition =
             window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -64,6 +76,7 @@ div.user-input {
     border-radius: 10px;
     background-color: white;
     flex-direction: row;
+    
 }
 div.user-input input.user-text {
     width: 100%;
@@ -79,4 +92,14 @@ div.user-input input.user-text {
 div.user-input button.speech-to-txt {
     margin: 50px;
 }
+
+div.user-input button.txt-to-speech {
+    padding-left: 100px;
+}
+div.user-input button.MotivationalQuotes{
+    display:flex;
+    background:coral;   
+    
+}
+
 </style>

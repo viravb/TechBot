@@ -9,12 +9,12 @@
   </div>
 </template>
 <style>
+ 
 
-.body{
-  background:linear-gradient(180deg, #3E428C,  #A904BF );
-  
+#app {
+  min-height: 100vh;
+  background:linear-gradient(135deg, #F2F2F2, #1A2873 );
 }
-
 
 html {
   background-color: white;

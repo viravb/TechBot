@@ -38,6 +38,7 @@ span{
   background-color: #5ff341; 
   opacity:60%;
   box-shadow: 10px 10px 5px black;
+  animation: slide 1s;
 }
 .computer{
   border: 1px solid ;
@@ -48,9 +49,17 @@ span{
   height: auto;
   background-color: #dedfec;
   box-shadow: 10px 10px 5px #0C0C0D;
+  animation: slide 1s;
 }
 p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Zen Dots', cursive;
+}
+
+@keyframes slide {
+  from {bottom: -20px}
+  to {bottom: 0px}
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
 }
 </style>
