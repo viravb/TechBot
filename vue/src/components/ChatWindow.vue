@@ -1,32 +1,38 @@
 <template>
+<div id='chat-window'>
   <div class="window">
-      <GreetUser />
-      <UserTextList />
+    <UserTextList class='list'/>
   </div>
+</div>
 </template>
 
 <script> 
 import UserTextList from './UserTextList.vue';
-import GreetUser from './GreetUser.vue';
-
 
 export default {
   name: "chat-window",
   components: { 
-    UserTextList,
-    GreetUser
+    UserTextList
   },
 }
 </script>
 
 <style>
-.window {
-  border: 0px solid black;
-  border-radius: 10px;
-  height: 700px;
-  margin: 20px 20px 5px 20px;
-  background-color: rgb(233, 233, 243);
-  overflow: auto;
+
+*::-webkit-scrollbar {
+  width: 16px;
+
 }
 
+*::-webkit-scrollbar-thumb {
+  background-color: black;
+  border-radius: 10px;
+}
+
+#chat-window {
+  border-radius: 10px;
+  height: 700px;
+  background: transparent;
+  overflow: auto;
+}
 </style>

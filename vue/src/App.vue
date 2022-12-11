@@ -10,8 +10,21 @@
 <style>
 
 html {
-  background-color: white;
-  
+  background: linear-gradient(-45deg, #0511F2, #4951F2, #999DF2, #B6B9F2, #F2F2F2);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
 
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
 </style>

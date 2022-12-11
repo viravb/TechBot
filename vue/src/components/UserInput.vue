@@ -1,12 +1,12 @@
 <template>
-  <div class="user-input">
-        <button class="speech-to-txt" @click="startTxtToSpeech">Speech to txt</button>
-        <button class="txt-to-speech" @click="startSpeechToTxt">Txt to speech </button>
+    <div class="user-input">
+        <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
+        <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
         <button class="end-chat" @click="endChat">End Chat</button>
-        <form v-on:submit.prevent='filteredKeyWord()'>
-            <input class="user-text" type="text" v-model='userText'>
+        <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
+            <input class="user-text" type="text" v-model='userText' placeholder='Enter Your Question Here'>
         </form>
-  </div>
+    </div>
 </template>
 <script>
 import AnswersService from '@/services/AnswersService';
@@ -63,27 +63,47 @@ export default {
 </script>
 <style>
 div.user-input {
-    height: 100px;
-    margin: 5px 20px 20px 20px;
-    border-radius: 10px;
-    background-color: white;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas: 'spe txt end'
+                         'use use use';
+    border-top: 5px solid black;
+    background: black;
 }
 div.user-input input.user-text {
     width: 100%;
     height: 100px;
     padding: 12px 20px;
+    margin: 0pc;
     box-sizing: border-box;
-    border: 0px solid black;
-    border-radius: 10px;
     background-color: white;
+    border: none;
+    border-radius: 0px 0 10px 10px;
     resize: none;
     font-size: 16px;
 }
-div.user-input button.speech-to-txt {
-    margin: 50px;
+div.user-input button {
+    position: relative;
+    align-self: end;
 }
+
+div.user-input button.speech{
+    grid-area: spe;
+    
+}
+div.user-input button.txt{
+    grid-area: txt;
+    
+}
+
 div.user-input button.end-chat {
-    margin: 100px;
+    grid-area: end;
+    
+}
+
+div.user-input form.user-form {
+    grid-area: use;
+    border-top: 5px solid black;
+
 }
 </style>
