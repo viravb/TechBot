@@ -1,6 +1,6 @@
 <template>
   <div class="user-text-list">
-    <ul>
+    <ul id='list' >
       <div class='welcome'>
         <p>{{`Welcome, ${$store.state.userName}`}}</p>
       </div>
@@ -17,8 +17,9 @@
 
 export default {
   name: 'user-text-list',
-  props: {text: Object},
+  props: {text: Object}
 }
+
 </script>
 
 <style>

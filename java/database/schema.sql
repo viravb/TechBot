@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 DROP TABLE IF EXISTS subby_toppy, sub_topic, topic;
 DROP SEQUENCE IF EXISTS  seq_sub_id, seq_topic_id 
 
@@ -277,6 +274,169 @@ You can ask questions like the below:
 Please ask me about only one sub-topic at a time
 </p>
 ');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 18
+VALUES ('stressed', '<p>
+By it''s very nature, a coding bootcamp is an inherently stressful experience. Coding bootcamps are intensive, they are difficult, and they will challenge you in ways you have never been challenged before. But dont worry! Techbot has your back 
+I can help you with the following topics:
+<ul>
+<li> &#x2022; Tips to help manage stress </li>
+<li> &#x2022; App suggestion</li>
+</ul>
+<a href=https://drive.google.com/file/d/1iu3ZW_8elgbRBueb7TZoIFsFY8Bzy_OJ/view target="_blank">Heres a resource, you rockstar you</a>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 19
+VALUES ('resumes', '<p>
+Did you know that the average recruiter spends just 6 seconds looking at a resume to decide if they''re going to reach out to them for an interview or not?! Just 6 seconds!!
+<br>
+Your resume will serve as your first impression when applying to jobs and we want to ensure that you''re putting your best foot forward with your resume as you begin applying to jobs in the technology industry. It usually takes a few drafts to perfect your resume, keep in mind that you''ll be submitting several drafts of your resume during the course of the cohort, and your Pathway Director will be helping you throughout the cohort to perfect your resume so by the time you begin applying to jobs, you''ll have an awesome resume that will impress any hiring manager!
+<br>
+<a href="https://drive.google.com/file/d/14QJxHbgz1fobZ8mIObZSRPZa2z3OTLZE/view" target="_blank"> Resume Presentation </a>
+<br>
+If you have additional questions about resumes please ask about the following topics:
+<br>
+<ul>
+<li>&#x2022; How long should my resume be?</li>
+<li>&#x2022; How do I describe my capstone on my resume?</li>
+<li>&#x2022; How do I describe my professional experience on my resume?</li>
+<li>&#x2022; Please provide an example</li>
+</p>
+');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 20
+VALUES ('roles', '<p>
+As you begin to do research on the career path that makes the most sense for you in the technology field, you''ll find that the options are endless. We''ve compiled a list of some of the most common roles in technology to help you not only form an understanding of the roles that will be available to you after graduation, but also to form an understanding of the different types of roles that you''ll be interacting with in your new technology career.
+<br>
+<a href="https://drive.google.com/file/d/1vtJWC6Ok6dOt6ATb-EONgEXy8Ux1K8vP/view" target="_blank">Job Role Presentation</a>
+<br>
+Additional question:
+<ul>
+<li>&#x2022; Can I switch roles within my career?</li>
+</ul>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 21
+VALUES ('recruiters', '<p>
+As you begin your job search for a job in technology, you''ll find that it''s not uncommon to work with third party recruiters for roles. Because technology is such an in-demand field, companies will often work with outside recruiting agencies to assist them with finding individuals for their roles.
+<br>
+<iframe src="https://drive.google.com/file/d/1bSJnO1PAU9mR5-ftAQx7ORj9PJRZ8WNL/preview" width="640" height="480" allow="autoplay"></iframe>
+<br>
+If you have additional questions about recruiters please ask the following:
+<br>
+<ul>
+<li>&#x2022; What is an agency recruiter?</li>
+<li>&#x2022; What is a corporate recruiter?</li>
+<li>&#x2022; What agencies do you recommend?</li>
+</ul>
+');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 22
+VALUES ('networking', '<p>
+Networking is going to be a vital part of your new career in technology. We want you all to feel comfortable and confident when it comes to networking with folks in the tech industry. Because of this, it''s important for you to begin networking sooner than later, so you can build up a quality network of connections in the industry.
+<br>
+<a href="https://drive.google.com/file/d/1q_spUYbGgL7Vi1SbFnDVSjv2sl9t_B16/view" target="_blank"> Networking Presentation</a>
+<br>
+If you have additional questions about networking please ask about the following:
+<br>
+<ul>
+<li>How should I approach someone at a networking event?</li>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 23
+VALUES ('interviews', '<p>
+Interviewing begins the moment you receive a call or email from the recruiter informing you that they''re interested in scheduling an interview. From that moment until the day of your interview, you need to ensure that you''re as prepared as possible. If you go into any interview without a high level of preparation, it will not go well. Preparation is key when interviewing for roles in the tech industry.
+<br>
+<a href="https://drive.google.com/file/d/1cqBMTovYMlKF1pTjU9V8J29w2jnaKmk5/view" target="_blank"> Interview Presentation</a>
+<br>
+If you have additional questions about networking please ask about the following:
+<ul>
+<li>What should I bring to an interview?</li>
+<li>What should I wear?</li>
+</ul>
+</p>
+');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 24
+VALUES ('interviewing', '<p>
+Interviewing begins the moment you receive a call or email from the recruiter informing you that they''re interested in scheduling an interview. From that moment until the day of your interview, you need to ensure that you''re as prepared as possible. If you go into any interview without a high level of preparation, it will not go well. Preparation is key when interviewing for roles in the tech industry.
+<br>
+<a href="https://drive.google.com/file/d/1cqBMTovYMlKF1pTjU9V8J29w2jnaKmk5/view" target="_blank"> Interview Presentation</a>
+<br>
+If you have additional questions about networking please ask about the following:
+<ul>
+<li>What should I bring to an interview?</li>
+<li>What should I wear?</li>
+</ul>
+</p>
+');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 25
+VALUES ('searching', '<p>
+At this point of the cohort we''ve given you all the tools and tricks you need to know in order to be successful in landing a job in technology. We''ve put together some great resources for you to be strategic in your job search and to help you stay organized.
+<br>
+<a href="https://drive.google.com/file/d/1l4pY-8z3GLTWMsx1pH_-pWFo1GUocdNk/view" target="_blank">Job Search Presentation</a>
+<br>
+If you have additional questions about the job search please ask the following:
+<ul>
+<li>What are some suggested job boards?</li>
+<li>What terms should I use in the job search?</li>
+<li>I want to learn about job alerts</li>
+</ul>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 26
+VALUES ('arrays', '<p>
+An array is a series of values of the same data type that are held together in a wrapper that can be treated as a single thing.  
+Arrays are created using the new keyword and Arrays are a fixed size ( The number of items the array will contain must be set when the array is created and cannot be changed after it is set. ).
+<br>
+<a href="https://www.w3schools.com/java/java_arrays.asp" target="_blank" > Info on Java Arrays </a>
+<br>
+If you have additional questions about arrays please ask the following:
+<ul>
+<li>When is an array''s size determined?</li>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 27
+VALUES ('loops', '<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6djggrlkHY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+Loops allow code to repeated for a set number of times.   Loops use a boolean condition, and execute the code while that condition is true and stop execution once the condition becomes false. 
+<br>
+The boolean condition must start true, and something in the loop must change the loop so that it eventually becomes false, and ends the loop.
+<br>
+If you have additional questions about loops please ask the following:
+<ul>
+<li>&#x2022; What are the pitfalls of loops?</li>
+<li>&#x2022; What is a for loop?</li>
+<li>&#x2022; What is a while loop?</li>
+<li>&#x2022; What is a for each loop?</li>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 28
+VALUES ('Variables', '<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/so1iUWaLmKA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>	
+Variables are storage containers paired with a symbolic name or identifier.  They holds some known or unknown amount of information referred to as a value.  Variables have a Data Type that defines what type of data that variable can hold.	
+https://www.w3schools.com/java/java_variables.asp
+If you have additional questions about variables please ask the following:
+<li> &#x2022; How do you declare a variable?</li>
+<li> &#x2022; What is a final variable?</li>
+</p>');
+
+INSERT INTO topic (topic_name, topic_answer) ------ 29
+VALUES ('databases', '<p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hRulZhTtUTg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<br>
+A database is an organized collection of data that can be accessed, managed, and updated.
+A relational database is a particular type of database built upon the relational model of data 
+Data in a relational database can be accessed and reassembled in many different ways without having to reorganize the data.
+- Each entity is stored in a table.
+- Columns are called attributes
+- Rows represent individual records.
+Rows represent individual records and consist of many attributes organized using columns.
+<a href=https://www.javatpoint.com/what-is-database target=""_blank"">Here</a> is a link to understand more about a database
+</p>');
 
 INSERT INTO sub_topic (sub_name, sub_answer) ------ (1, 1)
 VALUES ('tip', '<p>
@@ -583,7 +743,8 @@ SQL is Structured Query Language :  a language that lets you access and manipula
 INSERT INTO subby_toppy (topic_id, sub_id)
 VALUES   (1, 1), (1, 2), (2, 3), (2, 4), (2, 5), (3, 6), (3, 7), (4, 8), (4, 9), (4, 10), (4, 11), (5, 12), (5, 13), (6, 14), (6, 15), (6, 16), (7, 17), 
 		 (8, 18), (8, 19), (8, 20), (9, 21), (10, 22), (10, 23), (11, 24), (11, 25), (11, 26), (12, 27), (12, 28), (12, 29), (13, 30), (13, 31), (13, 32), 
-		 (13, 33), (14, 34), (14, 35), (15, 36), (16, 37);
+		 (13, 33), (14, 34), (14, 35), (15, 36), (16, 37), (18, 1), (18, 2), (19, 8), (19, 9), (19, 10), (19, 11), (20, 17), (21, 18), (21, 19), (21, 20), 
+		 (22, 21), (23, 22), (23, 23), (24, 22), (24, 23), (25, 24), (25, 25), (25, 26), (26, 27), (26, 28), (26, 29), (27, 30), (27, 31), (27, 32), (27, 33), 
+		 (28, 34), (28, 25);
 
 COMMIT TRANSACTION;
->>>>>>> d89479200cb27708717453146158e14ef91e6a55
