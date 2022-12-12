@@ -1,8 +1,11 @@
 <template>
   <div class="user-text-list">
     <ul>
+      <div class='welcome'>
+        <p>{{`Welcome, ${$store.state.userName}`}}</p>
+      </div>
       <li v-for='text in $store.state.userText' v-bind:key='text.index'  v-bind:class='text.id'>
-        <p>
+        <p class='text'>
           <span v-html = "text.text">{{text.text}}</span> 
         </p>
       </li>
@@ -23,25 +26,30 @@ export default {
 div.user-text-list ul {
   list-style-type: none;
 }
-span{
+div.user-text-list ul span {
   width:100%;
   height:1em;
   display:inline-block;
 }
-.user {
-  border: 1px solid lightblue;
+li.user {
+  border: 1px solid black;
   border-radius: 5px;
   margin-left: 30%;
   margin-right: 2%;
   margin-top: 2%;
   height: 50px;
-  background-color: #5ff341; 
+  background:  #514BF2 ;
   opacity:60%;
   box-shadow: 10px 10px 5px black;
   animation: slide 1s;
 }
-.computer{
-  border: 1px solid ;
+
+li.user p.text {
+  padding-left: 10px;
+}
+
+li.computer {
+  border: 1px solid lightgreen;
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;
@@ -51,6 +59,26 @@ span{
   box-shadow: 10px 10px 5px #0C0C0D;
   animation: slide 1s;
 }
+
+li.computer p.text {
+  padding-left: 10px;
+}
+
+div.welcome {
+  border: 1px solid lightgreen;
+  border-radius: 5px;
+  margin-right: 30%;
+  margin-left: 2%;
+  margin-top: 2%;
+  height: 50px;
+  background-color: #dedfec;
+  box-shadow: 10px 10px 5px #AAAAAA;
+}
+
+div.welcome p {
+  padding-left: 10px;
+}
+
 p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Zen Dots', cursive;
@@ -60,6 +88,6 @@ p {
   from {bottom: -20px}
   to {bottom: 0px}
   0%   { opacity: 0; }
-  100% { opacity: 1; }
+  80% { opacity: 1; }
 }
 </style>

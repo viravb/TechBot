@@ -1,3 +1,6 @@
+<<<<<<< HEAD
+
+=======
 DROP TABLE IF EXISTS subby_toppy, sub_topic, topic;
 DROP SEQUENCE IF EXISTS  seq_sub_id, seq_topic_id 
 
@@ -583,3 +586,4 @@ VALUES   (1, 1), (1, 2), (2, 3), (2, 4), (2, 5), (3, 6), (3, 7), (4, 8), (4, 9),
 		 (13, 33), (14, 34), (14, 35), (15, 36), (16, 37);
 
 COMMIT TRANSACTION;
+>>>>>>> d89479200cb27708717453146158e14ef91e6a55

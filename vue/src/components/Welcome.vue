@@ -26,7 +26,7 @@ export default {
             if(this.name == '') {
                 alert("Please Enter A Name")
             } else {
-                this.$store.commit('SAVE_NAME', this.name);
+                this.$store.commit('SAVE_NAME', this.name); 
                 this.$store.commit('SAVE_EMAIL', this.email)
                 this.$router.push('/home');
             }
@@ -51,6 +51,7 @@ div.welcome form {
   margin: 8px 0;
   box-sizing: border-box;
 }
+
 div.welcome h1.intro {
   font-size: 40px;
 }
@@ -74,8 +75,10 @@ button{
   overflow: hidden;
   transition: all .35s;
 }
+
+
 input[type=text] {
-  background-color: #C3F1E1;
+  background-color: #c3f1e1;
 }
 input[type=text] {
   background-color: #C3F1E1;

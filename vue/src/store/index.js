@@ -19,6 +19,7 @@ export default new Vuex.Store({
     userName: '',
     userEmail: '',
     linkURL: '',
+    chatEnded: false,
     currentTopic: 'empty',
     userText: [
     {
@@ -62,6 +63,9 @@ export default new Vuex.Store({
     },
     SAVE_LINK(state, urlFromResponse){
       state.linkURL = urlFromResponse;
+    },
+    END_CHAT(state) {
+      state.chatEnded = true;
     }
   }
 })

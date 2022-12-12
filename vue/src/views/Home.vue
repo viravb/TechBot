@@ -1,21 +1,30 @@
 <template>
   <div class="home">
-    <SiteIntro class='intro'/>
-    <ChatWindow class='win'/>
-    <UserInput class='user'/>
+     <SiteIntro class='intro'/>
+     <SideBar class='side'/>
+     <div class='chat-box'>
+        <div class='window-top'>
+          <p>Something</p>  
+        </div>
+        <ChatWindow class='win'/>
+        <UserInput class='user'/>
+     </div>
   </div>
 </template>
 
 <script>
+import SiteIntro from '@/components/SiteIntro';
 import ChatWindow from '@/components/ChatWindow';
 import UserInput from '@/components/UserInput';
-import SiteIntro from '@/components/SiteIntro';
+import SideBar from '@/components/SideBar'
+
 
 export default {
   components: { 
     ChatWindow, 
     UserInput,
-    SiteIntro
+    SiteIntro,
+    SideBar
   },
   name: "home",
 }
@@ -24,24 +33,39 @@ export default {
 
 div.home {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas: 'header header header'
-                       'chat chat chat'
-                       'input input input';
-  height: 120vh;
+  grid-template-columns: .5fr 2fr;
+  grid-template-rows: .5fr 2fr;
+  grid-template-areas: "head head"
+                       "bar chat";
   width: 100%;
+  background: linear-gradient(-45 deg,#0C0C0D,#B6B9F2) 
 }
 
-.win {
+div.chat-box {
   grid-area: chat;
-}
-
-.user {
-  grid-area: input;
+  margin-right: 25px;
 }
 
 .intro {
-  grid-area: header;
+  grid-area: head;
+}
+
+.side {
+  grid-area: bar;
+}
+
+div.home div.chat-box {
+  border: 5px solid rgb(10, 10, 10);
+  border-radius: 15px;
+}
+
+div.window-top p{
+  background: rgb(31, 30, 30);
+  margin-top: 0px;
+  height: 50px;
+  opacity: blur(80%);
+  color: rgb(31,30,30);
+  margin-bottom: 0px;
 }
 
 </style>

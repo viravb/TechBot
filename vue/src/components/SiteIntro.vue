@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id='head'>
     <img class="header" src="https://i0.wp.com/www.jamiesale-cartoonist.com/wp-content/uploads/cartoon-robot-free.png?ssl=1" alt="">
     <h1>Welcome To TechBot!</h1>
   </div>
@@ -12,7 +12,10 @@ export default {
 </script>
 
 <style>
-
+div#head {
+  display: flex;
+  flex-direction: row;
+}
 div h1 {
   font-family: 'Oswald', sans-serif;
   font-family: 'Zen Dots', cursive;
@@ -22,11 +25,14 @@ div h1 {
 }
 
 img {
-  width: 150px;
+  height: 150px;
   text-align: center;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 7%;
+  margin-right: 10%;
+  background: black;
+  border-radius: 50%;
+  border: 2px solid limegreen;
 }
 
 </style>
