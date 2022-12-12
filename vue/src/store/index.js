@@ -52,9 +52,7 @@ export default new Vuex.Store({
       state.userText.push({text: data.answer, id: 'computer'});
       state.currentTopic = data.currentTopic;
     },
-    SAVE_QUOTE(state,data){
-      state.userText.push({text: data.content, id:'computer'})
-    },
+   
     SAVE_NAME(state, name) {
       state.userName = name;
     },
@@ -66,6 +64,9 @@ export default new Vuex.Store({
     },
     END_CHAT(state) {
       state.chatEnded = true;
-    }
+    },
+    GET_QUOTES(state, data) {
+      state.userText.push({text: data[0].quote, id: 'computer'})
+    },
   }
 })

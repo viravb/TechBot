@@ -1,19 +1,20 @@
 <template>
     <div class="user-input">
-        <div class="container">
-            <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
-            <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
-            <button class= 'btn btn-border-1' @click="buttonQuote">Motivational Quotes</button>
-            <button class="end-chat" @click="endChat">End Chat</button>
-        </div>
+        <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
+        <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
+        <button class="end-chat" @click="newPage">End Chat</button>
+        <button class="bottom-boy" v-on:click.prevent="getQuote()">Click Here for a Quote!</button>
         <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
             <input class="user-text" type="text" v-model='userText' placeholder='Enter Your Question Here'>
         </form>
     </div>
 </template>
 <script>
+import {init} from 'emailjs-com';
+init('');
+import emailjs from 'emailjs-com';
 import AnswersService from '@/services/AnswersService';
-import QuoteService from '@/services/QuoteService'
+import QuoteService from '@/services/QuoteService';
 export default {
     name: "user-input",
     data() {
@@ -29,17 +30,16 @@ export default {
         filteredKeyWord() {
             let sentenceToSend = `${this.userText} ${this.$store.state.currentTopic}`;
             this.$store.commit('SAVE_TEXT', this.userText);
+            if(this.userText.valueOf('quote') || this.userText.valueOf('quotes')){
+                    this.getQuote();
+            }
+            else {
             AnswersService.getAnswers(sentenceToSend).then(response => {
                 this.computerResponse = response.data.answer;
                 this.$store.commit('GET_ANSWERS', response.data);
             }).catch(error => console.error(error));
             this.userText = '';
-        },
-
-        buttonQuote(){
-            QuoteService.getQuote().then(response=>{
-            this.$store.commit('SAVE_QUOTE',response.data);
-        })
+            }
         },
 
         startTxtToSpeech() {
@@ -69,7 +69,37 @@ export default {
         endChat() {
             this.$store.commit('END_CHAT');
             this.$router.push('/end');
-        }
+        },
+        sendEmail() {
+           emailjs.send(
+               'service_e1r0z6r',
+               'template_76hzrbu',
+               {
+                   from_name: "param 1 if you customized",
+                  to_name: "param 2",
+                    message: "param 3",
+               },
+               'hettd63dNPyGe0ocn'
+           ).then(
+                function (response) {
+            console.log("SUCCESS!", response.status, response.text);
+          },
+          function (error) {
+            console.log("FAILED...", error);
+          }
+           );
+        },
+        newPage() {
+            this.sendEmail();
+            this.endChat();
+        },
+        getQuote() {
+          QuoteService.getQuotes().then(response => {
+             this.$store.commit('GET_QUOTES', response.data)
+          }).catch(error => {
+            console.error(error);
+          })
+      }
     }
 }
 </script>
@@ -110,25 +140,18 @@ div.user-input button {
     position: relative;
     align-self: end;
 }
-
 div.user-input button.speech{
     grid-area: spe;
-    
 }
 div.user-input button.txt{
     grid-area: txt;
-    
 }
-
 div.user-input button.end-chat {
     grid-area: end;
-    
 }
-
 div.user-input form.user-form {
     grid-area: use;
     border-top: 5px solid black;
-
 }
 
 div.user-input button.txt-to-speech {
