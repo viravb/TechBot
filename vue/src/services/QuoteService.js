@@ -1,12 +1,11 @@
 import axios from "axios";
 const quoteAxios = axios.create(
    { headers: {
-    'X-RapidAPI-Key': '681096fe80mshf27e2da156cd13dp1dba49jsnb9c77ea570ee',
-    'X-RapidAPI-Host': 'quotes15.p.rapidapi.com'
-}})
-   ;
+    'X-Api-Key': 'l9zGqUNO1COvPZmxXKTU9A==QYEpLzPECINE332w'
+   }})
+   
 export default {
-getQuote() {
-    return quoteAxios.get('https://quotes15.p.rapidapi.com/quotes/random/');
+getQuotes() {
+    return quoteAxios.get('https://api.api-ninjas.com/v1/quotes?category=inspirational');
 }
 }

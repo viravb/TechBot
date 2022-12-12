@@ -1,5 +1,6 @@
 <template>
-  <div id="app">
+  <div id="app" class = 'body'>
+
     <!-- <div id="nav">
       <router-link v-bind:to="{ name: 'home' }">Home</router-link>&nbsp;|&nbsp;
       <router-link v-bind:to="{ name: 'logout' }" v-if="$store.state.token != ''">Logout</router-link>
@@ -8,9 +9,15 @@
   </div>
 </template>
 <style>
+ 
+
+#app {
+  min-height: 100vh;
+  background:linear-gradient(135deg, #F2F2F2, #1A2873 );
+}
 
 html {
-  background: linear-gradient(-45deg, #0511F2, #4951F2, #999DF2, #B6B9F2, #F2F2F2);
+  background: linear-gradient(-45deg, #B6B9F2, #0C0C0D);
 	background-size: 400% 400%;
 	animation: gradient 15s ease infinite;
 	height: 100vh;

@@ -14,7 +14,7 @@ import {init} from 'emailjs-com';
 init('');
 import emailjs from 'emailjs-com';
 import AnswersService from '@/services/AnswersService';
-import QuotesService from '@/services/QuoteService';
+import QuoteService from '@/services/QuoteService';
 export default {
     name: "user-input",
     data() {
@@ -22,19 +22,26 @@ export default {
             userText: '',
             runtimeTranscription_: '',
             computerResponse: '',
-            lang_: 'en'
+            lang_: 'en',
+            quote: ''
         }
     },
     methods : {
         filteredKeyWord() {
             let sentenceToSend = `${this.userText} ${this.$store.state.currentTopic}`;
             this.$store.commit('SAVE_TEXT', this.userText);
+            if(this.userText.valueOf('quote') || this.userText.valueOf('quotes')){
+                    this.getQuote();
+            }
+            else {
             AnswersService.getAnswers(sentenceToSend).then(response => {
                 this.computerResponse = response.data.answer;
                 this.$store.commit('GET_ANSWERS', response.data);
             }).catch(error => console.error(error));
             this.userText = '';
+            }
         },
+
         startTxtToSpeech() {
             window.SpeechRecognition =
             window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -87,8 +94,8 @@ export default {
             this.endChat();
         },
         getQuote() {
-          QuotesService.getQuote().then(response => {
-             this.$store.commit('GET_QUOTES',response.data)
+          QuoteService.getQuotes().then(response => {
+             this.$store.commit('GET_QUOTES', response.data)
           }).catch(error => {
             console.error(error);
           })
@@ -97,13 +104,24 @@ export default {
 }
 </script>
 <style>
-div.user-input {
+button{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+div.user-input div.container {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 'spe txt end'
-                         'use use use';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'spe quo txt end'
+                         'use use use use';
     border-top: 5px solid black;
     background: black;
+    margin: auto;
+    width:100%;
+    text-align:center;
+    font-size:0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:400;
+    
 }
 div.user-input input.user-text {
     width: 100%;
@@ -115,6 +133,7 @@ div.user-input input.user-text {
     border: none;
     border-radius: 0px 0 10px 10px;
     resize: none;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
 div.user-input button {
@@ -134,4 +153,15 @@ div.user-input form.user-form {
     grid-area: use;
     border-top: 5px solid black;
 }
+
+div.user-input button.txt-to-speech {
+    padding-left: 100px;
+}
+div.user-input button.MotivationalQuotes{
+    grid-area:quo;
+    background:coral;   
+    
+}
+
+
 </style>

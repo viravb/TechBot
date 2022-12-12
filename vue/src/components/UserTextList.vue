@@ -10,7 +10,8 @@
         </p>
       </li>
     </ul>
-  </div>
+  </div> 
+  
 </template>
 
 <script>
@@ -32,14 +33,16 @@ div.user-text-list ul span {
   display:inline-block;
 }
 li.user {
-  border: 1px solid lightblue;
+  border: 1px solid black;
   border-radius: 5px;
   margin-left: 30%;
   margin-right: 2%;
   margin-top: 2%;
   height: 50px;
-  background-color: lightblue;
-  box-shadow: 10px 10px 5px #AAAAAA;
+  background:  #514BF2 ;
+  opacity:60%;
+  box-shadow: 10px 10px 5px black;
+  animation: slide 1s;
 }
 
 li.user p.text {
@@ -53,8 +56,9 @@ li.computer {
   margin-left: 2%;
   margin-top: 2%;
   height: auto;
-  background-color: lightgreen;
-  box-shadow: 10px 10px 5px #AAAAAA;
+  background-color: #dedfec;
+  box-shadow: 10px 10px 5px #0C0C0D;
+  animation: slide 1s;
 }
 
 li.computer p.text {
@@ -68,7 +72,7 @@ div.welcome {
   margin-left: 2%;
   margin-top: 2%;
   height: 50px;
-  background-color: lightgreen;
+  background-color: #dedfec;
   box-shadow: 10px 10px 5px #AAAAAA;
 }
 
@@ -79,5 +83,12 @@ div.welcome p {
 p {
     font-family: 'Oswald', sans-serif;
     font-family: 'Zen Dots', cursive;
+}
+
+@keyframes slide {
+  from {bottom: -20px}
+  to {bottom: 0px}
+  0%   { opacity: 0; }
+  80% { opacity: 1; }
 }
 </style>
