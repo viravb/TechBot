@@ -3,6 +3,7 @@
         <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
         <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
         <button class="end-chat" @click="endChat">End Chat</button>
+        <button class="bottom-boy" v-on:click.prevent="getQuote()">Click Here for a Quote!</button>
         <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
             <input class="user-text" type="text" v-model='userText' placeholder='Enter Your Question Here'>
         </form>
@@ -10,6 +11,7 @@
 </template>
 <script>
 import AnswersService from '@/services/AnswersService';
+import QuotesService from '@/services/QuoteService'
 export default {
     name: "user-input",
     data() {
@@ -57,16 +59,23 @@ export default {
         endChat() {
             this.$store.commit('END_CHAT');
             this.$router.push('/end');
-        }
+        },
+        getQuote() {
+          QuotesService.getQuote().then(response => {
+             this.$store.commit('GET_QUOTES',response.data)
+          }).catch(error => {
+            console.error(error);
+          })
+      }
     }
 }
 </script>
 <style>
 div.user-input {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 'spe txt end'
-                         'use use use';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'spe txt end ema'
+                         'use use use use';
     border-top: 5px solid black;
     background: black;
 }
@@ -92,13 +101,15 @@ div.user-input button.speech{
     
 }
 div.user-input button.txt{
-    grid-area: txt;
-    
+    grid-area: txt; 
 }
 
 div.user-input button.end-chat {
     grid-area: end;
-    
+}
+
+div.user-input button.email {
+    grid-area: ema;
 }
 
 div.user-input form.user-form {

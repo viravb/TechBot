@@ -68,4 +68,3 @@ div.window-top p{
 }
 
 </style>
-

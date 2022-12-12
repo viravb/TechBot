@@ -63,6 +63,9 @@ export default new Vuex.Store({
     },
     END_CHAT(state) {
       state.chatEnded = true;
-    }
+    },
+    GET_QUOTES(state, data) {
+      state.userText.push({text: data.content, id: 'computer'})
+    },
   }
 })
