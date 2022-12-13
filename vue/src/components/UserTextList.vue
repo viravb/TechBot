@@ -49,7 +49,7 @@ li.user p.text {
 }
 
 li.computer {
-  border: 1px solid lightgreen;
+  border: 1px solid rgb(230, 240, 230);
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;
@@ -65,14 +65,14 @@ li.computer p.text {
 }
 
 div.welcome {
-  border: 1px solid lightgreen;
+  border: 1px solid #dedfec;
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;
   margin-top: 2%;
   height: 50px;
   background-color: #dedfec;
-  box-shadow: 10px 10px 5px #AAAAAA;
+  box-shadow: 10px 10px 5px #0C0C0D;
 }
 
 div.welcome p {

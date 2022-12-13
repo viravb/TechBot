@@ -30,7 +30,7 @@ export default {
         filteredKeyWord() {
             let sentenceToSend = `${this.userText} ${this.$store.state.currentTopic}`;
             this.$store.commit('SAVE_TEXT', this.userText);
-            if(this.userText.valueOf('quote') || this.userText.valueOf('quotes')){
+            if(this.userText.includes('quote') || this.userText.includes('quotes')){
                     this.getQuote();
             }
             else {
@@ -76,7 +76,7 @@ export default {
                'template_76hzrbu',
                {
                    from_name: "param 1 if you customized",
-                  to_name: "param 2",
+                   to_name: "param 2",
                     message: "param 3",
                },
                'hettd63dNPyGe0ocn'
@@ -104,12 +104,15 @@ export default {
 }
 </script>
 <style>
-button{
+button {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
+    color: black !important;
+    border: none !important;
 }
-div.user-input div.container {
+
+div.user-input {
     display: grid;
+    justify-content: space-evenly;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 'spe quo txt end'
                          'use use use use';
@@ -121,8 +124,10 @@ div.user-input div.container {
     font-size:0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight:400;
+    box-shadow: 10px 10px 5px black;
     
 }
+
 div.user-input input.user-text {
     width: 100%;
     height: 100px;
