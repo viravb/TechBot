@@ -28,7 +28,7 @@ img {
   height: 150px;
   text-align: center;
   display: block;
-  margin-left: 7%;
+  margin-left: 5.5%;
   margin-right: 10%;
   background: black;
   border-radius: 50%;

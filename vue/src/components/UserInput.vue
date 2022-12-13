@@ -3,7 +3,7 @@
         <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
         <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
         <button class="end-chat" @click="newPage">End Chat</button>
-        <button class="bottom-boy" v-on:click.prevent="getQuote()">Click Here for a Quote!</button>
+        <button class="bottom-boy" v-on:click.prevent="getQuote()">Quote!</button>
         <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
             <input class="user-text" type="text" v-model='userText' placeholder='Enter Your Question Here'>
         </form>
@@ -30,8 +30,9 @@ export default {
         filteredKeyWord() {
             let sentenceToSend = `${this.userText} ${this.$store.state.currentTopic}`;
             this.$store.commit('SAVE_TEXT', this.userText);
-            if(this.userText.valueOf('quote') || this.userText.valueOf('quotes')){
+            if(this.userText.includes('quote') || this.userText.includes('quotes')){
                     this.getQuote();
+                    this.userText = '';
             }
             else {
             AnswersService.getAnswers(sentenceToSend).then(response => {
@@ -70,14 +71,15 @@ export default {
             this.$store.commit('END_CHAT');
             this.$router.push('/end');
         },
-        sendEmail() {
+         sendEmail() {
            emailjs.send(
                'service_e1r0z6r',
                'template_76hzrbu',
                {
-                   from_name: "param 1 if you customized",
-                  to_name: "param 2",
-                    message: "param 3",
+                   from_name: 'TechBot',
+                  to_name: this.$store.state.userName,
+                  user_email: this.$store.state.userEmail,
+                    message: this.emailMessage
                },
                'hettd63dNPyGe0ocn'
            ).then(
@@ -100,29 +102,45 @@ export default {
             console.error(error);
           })
       }
+    },
+    computed: {
+        emailMessage() {
+            let message = '';
+            let newArray = this.$store.state.userText;
+            for( let i = 0; i < newArray.length; i++) {
+                if(newArray[i].id == 'computer') {
+                    message = message + 'TECHBOT: ' + newArray[i].text + "\n";
+                }
+                else {
+                message = message + this.$store.state.userName + ": " +
+                newArray[i].text + "\n";
+                }
+            }
+            return message;
+        }
     }
 }
 </script>
 <style>
-button{
+button {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-
 }
-div.user-input div.container {
+
+div.user-input {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas: 'spe quo txt end'
                          'use use use use';
-    border-top: 5px solid black;
-    background: black;
+    
+    background: rgba(13, 12, 13, 0.53) transparent;
     margin: auto;
     width:100%;
     text-align:center;
     font-size:0;
     font-family: Arial, Helvetica, sans-serif;
     font-weight:400;
-    
 }
+
 div.user-input input.user-text {
     width: 100%;
     height: 100px;
@@ -136,19 +154,35 @@ div.user-input input.user-text {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
 }
+
 div.user-input button {
     position: relative;
     align-self: end;
+    border: 2px solid #8C82FC;
+    top: 50%;
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
+    box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
+    margin-bottom: 10px;
 }
+
+div.user-input button:hover {
+    background: grey !important
+}
+
 div.user-input button.speech{
     grid-area: spe;
 }
+
 div.user-input button.txt{
     grid-area: txt;
 }
+
 div.user-input button.end-chat {
     grid-area: end;
 }
+
 div.user-input form.user-form {
     grid-area: use;
     border-top: 5px solid black;
@@ -157,11 +191,14 @@ div.user-input form.user-form {
 div.user-input button.txt-to-speech {
     padding-left: 100px;
 }
+
 div.user-input button.MotivationalQuotes{
     grid-area:quo;
     background:coral;   
-    
 }
 
-
+button {
+    color:black !important;
+    border:transparent ! important
+}
 </style>

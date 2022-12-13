@@ -35,7 +35,6 @@ export default {
   height: 700px;
   background: transparent;
   overflow: auto;
-  box-shadow: 10px 10px 5px black;
   opacity:60%;
   animation: slide 1s;
 }

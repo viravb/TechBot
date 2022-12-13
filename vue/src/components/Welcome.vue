@@ -1,6 +1,6 @@
 <template>
   <div class='full'>
-    <div class='welcome'>
+    <div class='wel'>
       <img class="header" src="https://i0.wp.com/www.jamiesale-cartoonist.com/wp-content/uploads/cartoon-robot-free.png?ssl=1" alt="">
         <h1 class='intro'>Welcome To TechBot!</h1>
         <h1>To Visit The ChatBot Please Enter Your Name :</h1>
@@ -38,11 +38,11 @@ export default {
 div.full {
  height: 100vh;
 }
-div.welcome h1 {
+div.wel h1 {
   text-decoration: none;
   font-size: 30px;
 }
-div.welcome form {
+div.wel form {
   margin-top: 15px;
   text-align: center;
   width: 100%;
@@ -52,13 +52,14 @@ div.welcome form {
   box-sizing: border-box;
 }
 
-div.welcome h1.intro {
+div.wel h1.intro {
   font-size: 40px;
 }
-button{
+
+button {
   font-family: 'Ubuntu', sans-serif;
   position: absolute;
-  top: 50%;
+  
   left: 50%;
   transform: translate(-50%, -50%);
   width: 170px;
@@ -74,6 +75,10 @@ button{
   cursor: pointer;
   overflow: hidden;
   transition: all .35s;
+}
+
+form.user-name button {
+  top: 50%;
 }
 
 
@@ -95,4 +100,5 @@ button:hover{
   background: #8C82FC;
   color: #fff;
 }
+
 </style>

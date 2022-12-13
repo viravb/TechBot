@@ -38,12 +38,12 @@ div.home {
   grid-template-areas: "head head"
                        "bar chat";
   width: 100%;
-  background: linear-gradient(-45 deg,#0C0C0D,#B6B9F2) 
 }
 
 div.chat-box {
   grid-area: chat;
   margin-right: 25px;
+  background: rgba(13, 12, 13, 0.53);
 }
 
 .intro {
@@ -57,6 +57,7 @@ div.chat-box {
 div.home div.chat-box {
   border: 5px solid rgb(10, 10, 10);
   border-radius: 15px;
+  box-shadow: 10px 10px 15px #0C0C0D;
 }
 
 div.window-top p{
@@ -66,6 +67,7 @@ div.window-top p{
   opacity: blur(80%);
   color: rgb(31,30,30);
   margin-bottom: 0px;
-}
-
+  border-top-left-radius: 9px;
+  border-top-right-radius: 9px;
+}        
 </style>

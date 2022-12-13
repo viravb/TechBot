@@ -13,16 +13,15 @@
 
 #app {
   min-height: 100vh;
-  background:linear-gradient(135deg, #F2F2F2, #1A2873 );
 }
 
 html {
-  background: linear-gradient(-45deg, #B6B9F2, #0C0C0D);
+  background: linear-gradient(-45deg, #00467F, rgb(31, 190, 211), #82ccb0);
 	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
+	animation: gradient 30s ease infinite;
 	height: 100vh;
+	font-family: 'Josefin Sans', sans-serif;
 }
-
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -34,4 +33,6 @@ html {
 		background-position: 0% 50%;
 	}
 }
+
+
 </style>
