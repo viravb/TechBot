@@ -164,7 +164,7 @@ div.user-input button {
     height: 30px;
     background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
     box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 div.user-input button:hover {

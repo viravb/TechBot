@@ -50,8 +50,6 @@ export default {
   animation: 2s bulge infinite ease-out;
 }
  
-
-
 @keyframes blink {
   50% {
     opacity: 1;
@@ -63,7 +61,6 @@ export default {
     transform: scale(1.05);
   }
 }
-
 
 @keyframes slide {
   from {bottom: -20px}

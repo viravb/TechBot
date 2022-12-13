@@ -4,7 +4,7 @@
      <SideBar class='side'/>
      <div class='chat-box'>
         <div class='window-top'>
-          <p>Something</p>  
+          <p></p>
         </div>
         <ChatWindow class='win'/>
         <UserInput class='user'/>
@@ -61,7 +61,7 @@ div.home div.chat-box {
 }
 
 div.window-top p{
-  background: rgb(31, 30, 30);
+  background-image: linear-gradient(black,rgba(0, 0, 0, 0.479), rgba(22, 20, 21, 0));
   margin-top: 0px;
   height: 50px;
   opacity: blur(80%);

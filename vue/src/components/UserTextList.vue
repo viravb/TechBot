@@ -1,6 +1,6 @@
 <template>
   <div class="user-text-list">
-    <ul id='list' >
+    <ul id='list'>
       <div class='welcome'>
         <p>{{`Welcome, ${$store.state.userName}`}}</p>
       </div>
@@ -78,6 +78,15 @@ div.welcome {
 
 div.welcome p {
   padding-left: 10px;
+}
+
+div.user-text-list {
+  overflow-y: scroll;
+  scroll-snap-type: y proximity;
+}
+
+div.user-text-list > ul > li:last-child {
+  scroll-snap-align: start end;
 }
 
 @keyframes slide {

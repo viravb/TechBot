@@ -1,10 +1,13 @@
 <template>
   <div id='side-bar'>
-    <a href='https://drive.google.com/file/d/14QJxHbgz1fobZ8mIObZSRPZa2z3OTLZE/view' target="_blank"><button class='btn-5'>Resume</button></a>
-    <a href='https://hbr.org/2014/02/how-to-write-a-cover-letter' target="_blank"><button class='btn-5'>Cover Letter</button></a>
-    <a href='https://www.javatpoint.com/what-is-database' target="_blank"><button class='btn-5'>Database</button></a>
-    <a href='https://drive.google.com/file/d/1cqBMTovYMlKF1pTjU9V8J29w2jnaKmk5/view' target="_blank"><button class='btn-5'>Interview</button></a>
-    <a href='https://drive.google.com/file/d/1iu3ZW_8elgbRBueb7TZoIFsFY8Bzy_OJ/view' target="_blank"><button class='btn-5'>Stress</button></a>
+    <div class='quick'>
+      <h1>Quick Reference</h1>
+    </div>
+      <a href='https://drive.google.com/file/d/14QJxHbgz1fobZ8mIObZSRPZa2z3OTLZE/view' target="_blank"><button class='btn-5'>Resume</button></a>
+      <a href='https://hbr.org/2014/02/how-to-write-a-cover-letter' target="_blank"><button class='btn-5'>Cover Letter</button></a>
+      <a href='https://www.javatpoint.com/what-is-database' target="_blank"><button class='btn-5'>Database</button></a>
+      <a href='https://drive.google.com/file/d/1cqBMTovYMlKF1pTjU9V8J29w2jnaKmk5/view' target="_blank"><button class='btn-5'>Interview</button></a>
+      <a href='https://drive.google.com/file/d/1iu3ZW_8elgbRBueb7TZoIFsFY8Bzy_OJ/view' target="_blank"><button class='btn-5'>Stress</button></a>
   </div>
 </template>
 
@@ -17,11 +20,26 @@ export default {
   div#side-bar {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     margin-right: 15px;
     background: rgba(22, 20, 21, 0.6);
     border: 5px solid black;
     border-radius: 15px;
+  }
+
+  div#side-bar h1 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    align-content: center;
+    padding: 10px;
+    border-radius: 10px;
+    color: rgb(212, 209, 209);
+  }
+
+  div#side-bar div.quick {
+    background: transparent !important; 
+    background-image: linear-gradient(black,rgba(0, 0, 0, 0.479), rgba(22, 20, 21, 0)) !important;
+    border-radius: 0px !important;
   }
 
   div#side-bar button {
