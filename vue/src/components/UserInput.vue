@@ -116,7 +116,7 @@ export default {
                 newArray[i].text + "\n";
                 }
             }
-            return message;
+            return message.replace( /(<([^>]+)>)/ig, '');
         }
     }
 }
