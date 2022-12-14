@@ -1,9 +1,19 @@
 <template>
     <div class="user-input">
-        <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
-        <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
-        <button class="end-chat" @click="newPage">End Chat</button>
-        <button class="bottom-boy" v-on:click.prevent="getQuote()">Quote!</button>
+        <span class="buttons">
+        <button class="speech" @click="startTxtToSpeech">
+            <img src="https://spng.pngfind.com/pngs/s/61-615210_png-file-svg-ios-microphone-icon-png-transparent.png"/>
+        </button>
+        <button class="txt" @click="startSpeechToTxt">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.svg.png" alt="">
+            </button>
+        <button class="end-chat" @click="newPage">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMlNXZQ3HfOvRSmunQ_M367Ey6bE2k9axN7kMM1xQ&s" alt="">
+            </button>
+        <button class="bottom-boy" v-on:click.prevent="getQuote()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTq8BaumbgezvKV42lj_DA2tSJkvnF3G8jA&usqp=CAU" alt="">
+            </button>
+        </span>
         <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
             <input class="user-text" type="text" v-model='userText' placeholder='Enter Your Question Here'>
         </form>
@@ -122,90 +132,10 @@ export default {
                 newArray[i].text + "\n";
                 }
             }
-            return message;
+            return message.replace( /(<([^>]+)>)/ig, '');
         }
     }
 }
 </script>
 <style>
-button {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-
-div.user-input {
-    display: grid;
-    justify-content: space-evenly;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas: 'spe quo txt end'
-                         'use use use use';
-    
-    background: rgba(13, 12, 13, 0.53) transparent;
-    margin: auto;
-    width:100%;
-    text-align:center;
-    font-size:0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight:400;
-}
-
-div.user-input input.user-text {
-    width: 100%;
-    height: 100px;
-    padding: 12px 20px;
-    margin: 0pc;
-    box-sizing: border-box;
-    background-color: white;
-    border: none;
-    border-radius: 0px 0 10px 10px;
-    resize: none;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-}
-
-div.user-input button {
-    position: relative;
-    align-self: end;
-    border: 2px solid #8C82FC;
-    top: 50%;
-    width: 150px;
-    height: 30px;
-    background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
-    box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
-    margin-bottom: 10px;
-}
-
-div.user-input button:hover {
-    background: grey !important
-}
-
-div.user-input button.speech{
-    grid-area: spe;
-}
-
-div.user-input button.txt{
-    grid-area: txt;
-}
-
-div.user-input button.end-chat {
-    grid-area: end;
-}
-
-div.user-input form.user-form {
-    grid-area: use;
-    border-top: 5px solid black;
-}
-
-div.user-input button.txt-to-speech {
-    padding-left: 100px;
-}
-
-div.user-input button.MotivationalQuotes{
-    grid-area:quo;
-    background:coral;   
-}
-
-button {
-    color:black !important;
-    border:transparent ! important
-}
 </style>

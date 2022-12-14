@@ -12,27 +12,4 @@ export default {
 </script>
 
 <style>
-div#head {
-  display: flex;
-  flex-direction: row;
-}
-div h1 {
-  font-family: 'Oswald', sans-serif;
-  font-family: 'Zen Dots', cursive;
-  padding-top: 20px;
-  font-size: 40px;
-  text-align: center;
-}
-
-img {
-  height: 150px;
-  text-align: center;
-  display: block;
-  margin-left: 5.5%;
-  margin-right: 10%;
-  background: black;
-  border-radius: 50%;
-  border: 2px solid limegreen;
-}
-
 </style>
