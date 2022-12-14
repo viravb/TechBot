@@ -28,12 +28,7 @@
     animation: 2s bulge infinite ease-out;
   }
    
-  @keyframes blink {
-    50% {
-      opacity: 1;
-    }
-  }
-  
+ 
   @keyframes bulge {
     50% {
       transform: scale(1.05);
@@ -58,28 +53,29 @@
     flex-direction: column;
     justify-content: space-between;
     margin-right: 15px;
-    background: rgba(22, 20, 21, 0.6);
-    border: 5px solid black;
+    box-shadow: 10px 10px 15px #0C0C0D;
+    border: 0px solid black;
     border-radius: 15px;
   }
   
   div#side-bar h1 {
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     align-content: center;
     padding: 10px;
     border-radius: 10px;
-    color: rgb(212, 209, 209);
+    color:black;
   }
   
   div#side-bar div.quick {
     background: transparent !important; 
-    background-image: linear-gradient(black,rgba(0, 0, 0, 0.479), rgba(22, 20, 21, 0)) !important;
     border-radius: 0px !important;
   }
   
   div#side-bar button {
     position: relative;
+    margin-left: 30%;
+    margin-bottom: 20%;
   }
   
   .btn-5 {
@@ -90,10 +86,9 @@
     border: none;
     background: black;
     background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
-    box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
+    box-shadow: 10px 10px 15px #0C0C0D;
   }
   .btn-5:hover {
-    color: white !important;
     background: transparent;
     box-shadow:none;
   }
@@ -124,10 +119,6 @@
     transition:800ms ease all;
   }
   
-  div#side-bar div.quick {
-    background: lime;
-    border-radius: 15px;
-  }
   
   div#side-bar div.quick h1.reference {
     font-size: 16px;
@@ -145,7 +136,9 @@
     font-family: 'Oswald', sans-serif;
     font-family: 'Zen Dots', cursive;
     padding-top: 20px;
-    font-size: 40px;
+    margin-bottom: 0px;
+    margin-left: 10%;
+    font-size: 60px;
     text-align: center;
   }
   
@@ -154,16 +147,14 @@
     text-align: center;
     display: block;
     margin-left: 5.5%;
-    margin-right: 10%;
-    background: black;
-    border-radius: 50%;
-    border: 2px solid limegreen;
+    margin-right: 10%;    
+    border: 0px;
   }
-  
+  img {
+      border-radius: 50%;
+  }
   /*---USER-INPUT---*/
   div.user-input {
-   
-    background: rgba(13, 12, 13, 0.53) transparent;
     margin: auto;
     width:100%;
     text-align:center;
@@ -178,17 +169,54 @@
 }
 .speech img {
     height: 30px;
-    clip-path: circle();
+    
 }
+
+.speech {
+    border-radius: 50%;
+    border: 0px;
+    box-shadow: 10px 10px 15px #0C0C0D;
+}
+.speech:hover {
+    background-color: #a5ada5;
+  color: white;
+}
+
 .bottom-boy img {
     height: 30px;
-    border-radius: 50%;
+}
+.bottom-boy:hover {
+    background-color: #a5ada5;
+  color: white;
 }
 .txt img {
     height: 30px;
 }
+.txt {
+    border-radius: 50%;
+    border: 0px;
+    box-shadow: 10px 10px 15px #0C0C0D;
+}
+.txt:hover {
+    background-color: #a5ada5;
+  color: white;
+}
 .end-chat img {
     height: 30px;
+}
+.end-chat {
+    border-radius: 50%;
+    border: 0px;
+    box-shadow: 10px 10px 15px #0C0C0D;
+}
+.end-chat:hover {
+    background-color: #a5ada5;
+  color: white;
+}
+.bottom-boy {
+    border-radius: 50%;
+    border: 0px;
+    box-shadow: 10px 10px 15px #0C0C0D;
 }
 
 div.user-input input.user-text {
@@ -210,15 +238,14 @@ div.user-input button {
 
 }
 
-div.user-input form.user-form {
-    border-top: 5px solid black;
-}
-
 div.user-input button.txt-to-speech {
     padding-left: 100px;
 }
   
   /*---USER-TEXT-LIST---*/
+  .user-text-list {
+      margin-top: 0px;
+  }
   div.user-text-list ul {
     list-style-type: none;
   }
@@ -239,7 +266,7 @@ div.user-input button.txt-to-speech {
   }
   
   li.user p.text {
-    border: 1px solid black;
+    border: 0px solid black;
     width: 70%;
     border-radius: 5px;
     margin-left: 20%;
@@ -247,7 +274,7 @@ div.user-input button.txt-to-speech {
     margin-top: 2%;
     height: 50px;
     background:  rgba(81, 75, 242, 1);
-    box-shadow: 10px 10px 5px black;
+    box-shadow: 10px 10px 15px #0C0C0D;
     animation: slide 1s;
     color: rgba(222, 223, 236, 1);
     flex-direction: row-reverse;
@@ -265,7 +292,7 @@ div.user-input button.txt-to-speech {
     margin-top: 2%;
     height: auto;
     background-color: rgba(222, 223, 236, 1);
-    box-shadow: 10px 10px 5px #0C0C0D;
+    box-shadow: 10px 10px 15px #0C0C0D;
     animation: slide 1s;
     padding-left: 10px;
     padding-bottom: 10px;
@@ -285,7 +312,7 @@ div.user-input button.txt-to-speech {
     margin-top: 2%;
     height: 50px;
     background-color: #dedfec;
-    box-shadow: 10px 10px 5px #0C0C0D;
+    box-shadow: 10px 10px 15px #0C0C0D;
     padding-left: 10px;
   }
   
@@ -371,10 +398,10 @@ div.user-input button.txt-to-speech {
      height: 40px;
      width: 500px;
      font-size: 20px;
-     border: 2px solid black;
+     border: 0px solid black;
      border-radius: 5px;
    }
-   button:hover{
+   .welcome-button:hover{
      background: #8C82FC;
      color: #fff;
    }
@@ -392,7 +419,7 @@ div.user-input button.txt-to-speech {
   div.chat-box {
     grid-area: chat;
     margin-right: 25px;
-    background: rgba(13, 12, 13, 0.53);
+    border: 0px !important;
   }
   
   .intro {
@@ -404,13 +431,12 @@ div.user-input button.txt-to-speech {
   }
   
   div.home div.chat-box {
-    border: 5px solid rgb(10, 10, 10);
     border-radius: 15px;
     box-shadow: 10px 10px 15px #0C0C0D;
   }
   
   div.window-top p{
-    background-image: linear-gradient(black,rgba(0, 0, 0, 0.479), rgba(22, 20, 21, 0));
+   
     margin-top: 0px;
     height: 50px;
     opacity: blur(80%);
@@ -426,7 +452,7 @@ div.user-input button.txt-to-speech {
   }
   
   html {
-    background: linear-gradient(-45deg, #00467F, rgb(31, 190, 211), #82ccb0);
+    background: linear-gradient(145deg, #fff7ff, #dfd0d9);
       background-size: 400% 400%;
       animation: gradient 30s ease infinite;
       height: 100vh;
