@@ -1,9 +1,19 @@
 <template>
     <div class="user-input">
-        <button class="speech" @click="startTxtToSpeech">Speech to txt</button>
-        <button class="txt" @click="startSpeechToTxt">Txt to speech </button>
-        <button class="end-chat" @click="newPage">End Chat</button>
-        <button class="bottom-boy" v-on:click.prevent="getQuote()">Quote!</button>
+        <span class="buttons">
+        <button class="speech" @click="startTxtToSpeech">
+            <img src="https://spng.pngfind.com/pngs/s/61-615210_png-file-svg-ios-microphone-icon-png-transparent.png"/>
+        </button>
+        <button class="txt" @click="startSpeechToTxt">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.svg.png" alt="">
+            </button>
+        <button class="end-chat" @click="newPage">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMlNXZQ3HfOvRSmunQ_M367Ey6bE2k9axN7kMM1xQ&s" alt="">
+            </button>
+        <button class="bottom-boy" v-on:click.prevent="getQuote()">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTq8BaumbgezvKV42lj_DA2tSJkvnF3G8jA&usqp=CAU" alt="">
+            </button>
+        </span>
         <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
             <input class="user-text" type="text" v-model='userText' placeholder='Enter Your Question Here'>
         </form>

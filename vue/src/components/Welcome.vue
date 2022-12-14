@@ -7,11 +7,11 @@
         <form class='user-name'>
             <input type='text' v-model='name' placeholder='Your Name Here' required/>
             <input type='text' v-model='email' placeholder='Your Email Here' required/>
-            <button type="submit" v-on:click.stop.prevent='submit(), stopCameraStream()'>Submit</button>
+            <button class="welcome-button" type="submit" v-on:click.stop.prevent='submit(), stopCameraStream()'>Submit</button>
         </form>
     </div>
     <div class="camera-button">
-      <button type="button" class="camera-open" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
+      <button type="button" class="camera-open welcome-button" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
         <span v-if="!isCameraOpen">Open Camera</span>
         <span v-else>Close Camera</span>
     </button>
@@ -29,7 +29,7 @@
     <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
   </div>
   <div v-if="isCameraOpen && !isLoading" class="camera-shoot">
-    <button type="button" class="button" @click="takePhoto">Take Photo!</button>
+    <button type="button" class="button welcome-button" @click="takePhoto">Take Photo!</button>
   </div>
   </div>
 </template>
