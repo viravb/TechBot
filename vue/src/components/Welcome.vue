@@ -7,18 +7,48 @@
         <form class='user-name'>
             <input type='text' v-model='name' placeholder='Your Name Here' required/>
             <input type='text' v-model='email' placeholder='Your Email Here' required/>
-            <button type="submit" v-on:click.stop.prevent='submit()'>Submit</button>
+            <button type="submit" v-on:click.stop.prevent='submit(), stopCameraStream()'>Submit</button>
         </form>
     </div>
+    <div class="camera-button">
+      <button type="button" class="camera-open" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
+        <span v-if="!isCameraOpen">Open Camera</span>
+        <span v-else>Close Camera</span>
+    </button>
+  </div>
+  <div v-show="isCameraOpen && isLoading" class="camera-loading">
+    <ul class="loader-circle">
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <div v-if="isCameraOpen" v-show="!isLoading" class="camera-box" :class="{ 'flash' : isShotPhoto }">
+    <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
+    <video v-show="!isPhotoTaken" ref="camera" :width="450" :height="337.5" autoplay></video>
+    <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
+  </div>
+  <div v-if="isCameraOpen && !isLoading" class="camera-shoot">
+    <button type="button" class="button" @click="takePhoto">Take Photo!</button>
+  </div>
   </div>
 </template>
 <script>
+
 export default {
     name: 'welcome',
+    components: {
+      
+    },
     data() {
         return {
             name: '',
-            email: ''
+            email: '',
+            isCameraOpen: false,
+            isPhotoTaken: false,
+            isShotPhoto: false,
+            isLoading: false,
+            link: '#'
         }
     },
     methods: {
@@ -29,76 +59,69 @@ export default {
                 this.$store.commit('SAVE_NAME', this.name); 
                 this.$store.commit('SAVE_EMAIL', this.email)
                 this.$router.push('/home');
+                const canvas = document.getElementById("photoTaken").toDataURL("image/jpeg");
+                this.$store.state.newPicture = canvas;
+                console.log(canvas);
             }
         },
+        toggleCamera() {
+            if(this.isCameraOpen) {
+                this.isCameraOpen = false;
+                this.isPhotoTaken = false;
+                this.isShotPhoto = false;
+                this.stopCameraStream();
+            } else {
+                this.isCameraOpen = true;
+                this.createCameraElement();
+            }
+        },
+    
+        createCameraElement() {
+        this.isLoading = true;
+        
+            const constraints = (window.constraints = {
+                audio: false,
+                video: true
+            });
+
+
+            navigator.mediaDevices
+                .getUserMedia(constraints)
+                .then(stream => {
+            this.isLoading = false;
+            this.$refs.camera.srcObject = stream;
+            })
+            .catch(() => {
+            this.isLoading = false;
+                alert("May the browser didn't support or there is some errors.");
+            });
+        },
+    
+        stopCameraStream() {
+            let tracks = this.$refs.camera.srcObject.getTracks();
+			tracks.forEach(track => {
+				track.stop();
+		});
+    },
+    
+    takePhoto() {
+      if(!this.isPhotoTaken) {
+        this.isShotPhoto = true;
+
+        const FLASH_TIMEOUT = 50;
+
+        setTimeout(() => {
+          this.isShotPhoto = false;
+        }, FLASH_TIMEOUT);
+      }
+      
+      this.isPhotoTaken = !this.isPhotoTaken;
+      
+      const context = this.$refs.canvas.getContext('2d');
+      context.drawImage(this.$refs.camera, 0, 0, 450, 337.5);
+    },
     }
 }
 </script>
 <style>
-div.full {
- height: 100vh;
-}
-div.wel h1 {
-  text-decoration: none;
-  font-size: 30px;
-}
-div.wel form {
-  margin-top: 15px;
-  text-align: center;
-  width: 100%;
-  padding: 12px 20px;
-  padding-top: 40px;
-  margin: 8px 0;
-  box-sizing: border-box;
-}
-
-div.wel h1.intro {
-  font-size: 40px;
-}
-
-button {
-  font-family: 'Ubuntu', sans-serif;
-  position: absolute;
-  
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 170px;
-  height: 40px;
-  line-height: 1;
-  font-size: 18px;
-  font-weight: bold;
-  letter-spacing: 1px;
-  border: 3px solid #8C82FC;
-  background: #fff;
-  color: #8C82FC;
-  border-radius: 40px;
-  cursor: pointer;
-  overflow: hidden;
-  transition: all .35s;
-}
-
-form.user-name button {
-  top: 50%;
-}
-
-
-input[type=text] {
-  background-color: #c3f1e1;
-}
-input[type=text] {
-  background-color: #C3F1E1;
-  color: black;
-  border: none;
-  margin-left: 20px;
-  height: 40px;
-  width: 500px;
-  font-size: 20px;
-  border: 2px solid black;
-  border-radius: 5px;
-}
-button:hover{
-  background: #8C82FC;
-  color: #fff;
-}
-
 </style>

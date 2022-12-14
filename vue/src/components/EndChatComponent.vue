@@ -7,14 +7,8 @@
 <script>
 export default {
     name: 'end',
-
 }
 </script>
 
 <style>
-
-div.full {
- height: 100vh;
-}
-
 </style>
