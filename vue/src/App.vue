@@ -5,5 +5,5 @@
 </template>
 
 <style>
-@import './stylesheets/starwars.css';
+@import './stylesheets/lightmode.css';
 </style>
