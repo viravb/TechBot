@@ -51,7 +51,6 @@
   div#side-bar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin-right: 15px;
     box-shadow: 10px 10px 15px #0C0C0D;
     border: 0px solid black;
@@ -280,6 +279,11 @@ div.user-input button.txt-to-speech {
     flex-direction: row-reverse;
     padding-left: 10px;
     padding-top: 10px;
+  }
+  li p img {
+    height: 200px;
+    border-radius: 0%;
+    display: block;
   }
   
   
