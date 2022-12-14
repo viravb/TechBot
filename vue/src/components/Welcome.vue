@@ -75,16 +75,12 @@ export default {
                 this.createCameraElement();
             }
         },
-    
         createCameraElement() {
         this.isLoading = true;
-        
             const constraints = (window.constraints = {
                 audio: false,
                 video: true
             });
-
-
             navigator.mediaDevices
                 .getUserMedia(constraints)
                 .then(stream => {
@@ -96,7 +92,6 @@ export default {
                 alert("May the browser didn't support or there is some errors.");
             });
         },
-    
         stopCameraStream() {
             let tracks = this.$refs.camera.srcObject.getTracks();
 			tracks.forEach(track => {

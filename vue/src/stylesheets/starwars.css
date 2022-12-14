@@ -1,0 +1,474 @@
+/*---CHATWINDOW---*/
+::-webkit-scrollbar {
+  width: 33px;
+  background: #D2FF52;
+  background: -moz-linear-gradient(left,  #D2FF52 0%, #8FCE3B 51%, #8FCE3B 51%, #8FCE3B 51%, #D2FF52 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%,#D2FF52), color-stop(51%,#8FCE3B), color-stop(51%,#8FCE3B), color-stop(51%,#8FCE3B), color-stop(100%,#D2FF52));
+  background: -webkit-linear-gradient(left,  #D2FF52 0%,#8FCE3B 51%,#8FCE3B 51%,#8FCE3B 51%,#D2FF52 100%);
+  background: -o-linear-gradient(left,  #D2FF52 0%,#8FCE3B 51%,#8FCE3B 51%,#8FCE3B 51%,#D2FF52 100%);
+  background: -ms-linear-gradient(left,  #D2FF52 0%,#8FCE3B 51%,#8FCE3B 51%,#8FCE3B 51%,#D2FF52 100%);
+  background: linear-gradient(to right,  #D2FF52 0%,#8FCE3B 51%,#8FCE3B 51%,#8FCE3B 51%,#D2FF52 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D2FF52', endColorstr='#D2FF52',GradientType=1 );
+}
+
+::-webkit-scrollbar-track-piece  {
+  display:none;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background:transparent url('https://cloud.githubusercontent.com/assets/523933/9502647/9ffd8568-4c00-11e5-877e-4bbae5738792.png') no-repeat;
+  background-size:100%;
+  height: 301px;
+}
+  #chat-window {
+    border-radius: 10px;
+    height: 700px;
+    background: transparent;
+    overflow: auto;
+    animation: slide 1s;
+  }
+  .typing-indicator {
+    background-color:   #E6E7ED;
+    will-change: transform;
+    width: auto;
+    border-radius: 50px;
+    padding: 20px;
+    display: table;
+    margin: 0 auto;
+    position: relative;
+    animation: 2s bulge infinite ease-out;
+  }
+  @keyframes blink {
+    50% {
+      opacity: 1;
+    }
+  }
+  @keyframes bulge {
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  @keyframes slide {
+    from {bottom: -20px}
+    to {bottom: 0px}
+    0%   { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  /*---ENDCHATCOMPONENT---*/
+  div.full {
+    height: 100vh;
+   }
+  /*---SIDEBAR---*/
+  div#side-bar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-right: 15px;
+    background: url(http://wallpapercave.com/wp/pEeUsp1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+    height: 100%;
+    padding: 20px 0 40px 0px;
+  }
+  div#side-bar h1 {
+    font-family: 'Days One';
+  font-size: 30px;
+    color: #FFE807;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 46.4px;
+  }
+  div#side-bar div.quick {
+    background: transparent !important;
+    background-image: linear-gradient(black,rgba(0, 0, 0, 0.479), rgba(22, 20, 21, 0)) !important;
+    border-radius: 0px !important;
+  }
+  div#side-bar button {
+    position: relative;
+  }
+  .btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: black;
+    background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
+    box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
+  }
+  .btn-5:hover {
+    color: white !important;
+    background: transparent;
+    box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: white;
+    box-shadow:
+    -1px -1px 5px 0px black,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  div#side-bar div.quick {
+    background: lime;
+    border-radius: 15px;
+  }
+  div#side-bar div.quick h1.reference {
+    font-family: 'Days One';
+    font-size: 30px;
+    color: #FFFFFF;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 46.4px;
+  }
+  /*---SITE-INTRO---*/
+  div#head {
+    display: flex;
+    flex-direction: row;
+  }
+  div h1 {
+    font-family: 'Days One';
+  font-size: 80px;
+    color: #FFE807;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 500;
+  line-height: 46.4px;
+  }
+  img {
+    height: 150px;
+    text-align: center;
+    display: block;
+    margin-left: 5.5%;
+    margin-right: 10%;
+    background: black;
+    border-radius: 50%;
+    border: 2px solid limegreen;
+  }
+  /*---USER-INPUT---*/
+  button {
+    font-family: 'Days One';
+    font-size: 30px;
+    color: #FFFFFF;
+  }
+  div.user-input {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 'spe quo txt end'
+                         'use use use use';
+    background: rgba(13, 12, 13, 0.53) transparent;
+    margin: auto;
+    width:100%;
+    text-align:center;
+    font-size:0;
+    font-family: 'Days One';
+    font-size: 30px;
+    color: #FFFFFF;
+  }
+  div.user-input input.user-text {
+    width: 100%;
+    height: 100px;
+    padding: 12px 20px;
+    margin: 0pc;
+    box-sizing: border-box;
+    background: url(http://wallpapercave.com/wp/pEeUsp1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+    height: 100%;
+    padding: 20px 0 40px 0px;
+    border: none;
+    border-radius: 0px 0 10px 10px;
+    resize: none;
+    font-family: 'Droid Sans';
+    font-size: 14px;
+    font-style: italic;
+    font-variant: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+  div.user-input button {
+    position: relative;
+    align-self: end;
+    border: 2px solid #8C82FC;
+    top: 50%;
+    width: 150px;
+    height: 30px;
+    background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
+    box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
+    margin-bottom: 15px;
+  }
+  div.user-input button:hover {
+    background: grey !important
+  }
+  div.user-input button.speech{
+    grid-area: spe;
+  }
+  div.user-input button.txt{
+    grid-area: txt;
+  }
+  div.user-input button.end-chat {
+    grid-area: end;
+  }
+  div.user-input form.user-form {
+    grid-area: use;
+    border-top: 5px solid black;
+  }
+  div.user-input button.txt-to-speech {
+    padding-left: 100px;
+  }
+  div.user-input button.MotivationalQuotes{
+    grid-area:quo;
+    background:coral;
+  }
+  button {
+    color:black !important;
+    border:transparent ! important
+  }
+  /*---USER-TEXT-LIST---*/
+  div.user-text-list ul {
+    list-style-type: none;
+  }
+  .computerProfilePic {
+    height: 50px !important;
+    margin-top: 30px;
+    margin-right: 0px;
+  }
+  .textBubble {
+    display: flex;
+  }
+  .userProfilePic {
+    height: 50px !important;
+    margin-top: 30px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+ img.header {
+   content: url('/public/darth-vader-icon.png') !important;
+ }
+  li.user p.text {
+    border: 1px solid black;
+    width: 70%;
+    border-radius: 5px;
+    margin-left: 20%;
+    margin-right: 2%;
+    margin-top: 2%;
+    height: 50px;
+    background:  rgba(81, 75, 242, 1);
+    box-shadow: 10px 10px 5px black;
+    animation: slide 1s;
+    color: rgba(222, 223, 236, 1);
+    flex-direction: row-reverse;
+    padding-left: 10px;
+    padding-top: 10px;
+  }
+  li.computer p.text{
+    border: 1px solid #DEDFEC;
+    border-radius: 5px;
+    width: 65%;
+    margin-right: 30%;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: auto;
+    background-color: rgba(222, 223, 236, 1);
+    box-shadow: 10px 10px 5px #0C0C0D;
+    animation: slide 1s;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+  .welcome {
+    display: flex;
+    flex-direction: row;
+  }
+  div.welcome p {
+    border: 1px solid #DEDFEC;
+    border-radius: 5px;
+    width: 65%;
+    margin-right: 30%;
+    margin-left: 2%;
+    margin-top: 2%;
+    height: 50px;
+    background-color: #DEDFEC;
+    box-shadow: 10px 10px 5px #0C0C0D;
+    padding-left: 10px;
+  }
+  @keyframes slide {
+    from {bottom: -20px}
+    to {bottom: 0px}
+    0%   { opacity: 0; }
+    80% { opacity: 1; }
+  }
+  /*---WELCOME---*/
+  form.user-name {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+  ul.loader-circle {
+    list-style: none;
+  }
+  div.full {
+    height: 100vh;
+   }
+   div.wel h1 {
+     text-decoration: none;
+     font-size: 30px;
+   }
+   div.wel form {
+     margin-top: 15px;
+     text-align: center;
+     width: 100%;
+     padding: 12px 20px;
+     padding-top: 40px;
+     margin: 8px 0;
+     box-sizing: border-box;
+   }
+   div.wel h1.intro {
+     font-size: 40px;
+   }
+   button {
+    font-family: 'Days One';
+    font-size: 30px;
+    color: #FFE807;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 500;
+    line-height: 46.4px;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 170px;
+     height: 40px;
+     line-height: 1;
+     font-size: 18px;
+     font-weight: bold;
+     letter-spacing: 1px;
+     border: 3px solid #8C82FC;
+     background: rgb(255, 238, 1);
+     color: #8C82FC;
+     border-radius: 40px;
+     cursor: pointer;
+     overflow: hidden;
+     transition: all .35s;
+   }
+   form.user-name button {
+     top: 50%;
+     position: relative;
+     left: 0px;
+     transform: none;
+     display: none;
+   }
+   .camera-open {
+     margin-top: 50px;
+     margin-left: 5px;
+   }
+   input[type=text] {
+     background-color: #C3F1E1;
+   }
+   input[type=text] {
+     background-color: #C3F1E1;
+     color: rgb(243, 227, 8);
+     border: none;
+     margin-left: 20px;
+     height: 40px;
+     width: 500px;
+     font-size: 20px;
+     border: 2px solid black;
+     border-radius: 5px;
+   }
+   button:hover{
+     background: #8C82FC;
+     color: #fff;
+   }
+   /*---HOME---*/
+  div.home {
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+    grid-template-rows: .5fr 2fr;
+    grid-template-areas: "head head"
+                         "bar chat";
+    width: 100%;
+  }
+  div.chat-box {
+    grid-area: chat;
+    margin-right: 25px;
+    background: rgba(13, 12, 13, 0.53);
+  }
+  .intro {
+    grid-area: head;
+  }
+  .side {
+    grid-area: bar;
+  }
+  div.home div.chat-box {
+    border: 5px solid rgb(10, 10, 10);
+    border-radius: 15px;
+    box-shadow: 10px 10px 15px #0C0C0D;
+  }
+  div.window-top p{
+    background-image: linear-gradient(black,rgba(0, 0, 0, 0.479), rgba(22, 20, 21, 0));
+    margin-top: 0px;
+    height: 50px;
+    opacity: blur(80%);
+    color: rgb(31,30,30);
+    margin-bottom: 0px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
+  }
+  /*---APP---*/
+  #app {
+    min-height: 100vh;
+  }
+  html {
+    background: url(http://wallpapercave.com/wp/pEeUsp1.jpg);
+    background-position: center;
+    background-repeat: repeat;
+    background-size: cover;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+    height: 100vh;
+    padding: 20px 0 40px 0px;
+      animation: gradient 30s ease infinite;
+      height: 100vh;
+      font-family: 'Days One';
+      font-size: 30px;
+      color: #FFFFFF;
+  }
+  @keyframes gradient {
+      0% {
+          background-position: 0% 50%;
+      }
+      50% {
+          background-position: 100% 50%;
+      }
+      100% {
+          background-position: 0% 50%;
+      }
+  }
