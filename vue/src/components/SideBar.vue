@@ -1,18 +1,20 @@
 <template>
   <div id='side-bar'>
-    <div class='quick'>
-      <h1 class='reference'> Quick Reference</h1>
-    </div>
-    <a href='https://drive.google.com/file/d/14QJxHbgz1fobZ8mIObZSRPZa2z3OTLZE/view' target="_blank"><button >Resume Tips</button></a>
-    <a href='https://hbr.org/2014/02/how-to-write-a-cover-letter' target="_blank"><button>Cover Letter Tips</button></a>
-    <a href='https://www.javatpoint.com/what-is-database' target="_blank"><button>Intro to Database</button></a>
-    <a href='https://drive.google.com/file/d/1cqBMTovYMlKF1pTjU9V8J29w2jnaKmk5/view' target="_blank"><button>Interview</button></a>
-    <a href='https://drive.google.com/file/d/1iu3ZW_8elgbRBueb7TZoIFsFY8Bzy_OJ/view' target="_blank"><button>Stress Tips</button></a>
+    <a href='https://drive.google.com/file/d/14QJxHbgz1fobZ8mIObZSRPZa2z3OTLZE/view' target="_blank"><button class='btn-5'>Resume</button></a>
+    <a href='https://hbr.org/2014/02/how-to-write-a-cover-letter' target="_blank"><button class='btn-5'>Cover Letter</button></a>
+    <a href='https://www.javatpoint.com/what-is-database' target="_blank"><button class='btn-5'>Database</button></a>
+    <a href='https://drive.google.com/file/d/1cqBMTovYMlKF1pTjU9V8J29w2jnaKmk5/view' target="_blank"><button class='btn-5'>Interview</button></a>
+    <a href='https://drive.google.com/file/d/1iu3ZW_8elgbRBueb7TZoIFsFY8Bzy_OJ/view' target="_blank"><button class='btn-5'>Stress</button></a>
+  
+  <iframe v-show="this.$store.state.isTrue" style="border-radius:12px" src="https://open.spotify.com/embed/track/2KH16WveTQWT6KOG9Rg6e2?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
   </div>
+
 </template>
 
 <script>
 export default {
+
+  
 }
 </script>
 
@@ -22,13 +24,57 @@ export default {
     flex-direction: column;
     justify-content: space-evenly;
     margin-right: 15px;
+    background: rgba(22, 20, 21, 0.6);
+    border: 5px solid black;
+    border-radius: 15px;
   }
 
   div#side-bar button {
     position: relative;
-    top: 0;
   }
 
+  .btn-5 {
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    background: black;
+    background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
+    box-shadow: 5px 5px 1px rgba(10, 10, 10, 1);
+  }
+  .btn-5:hover {
+    color: white !important;
+    background: transparent;
+    box-shadow:none;
+  }
+  .btn-5:before,
+  .btn-5:after{
+    content:'';
+    position:absolute;
+    top:0;
+    right:0;
+    height:2px;
+    width:0;
+    background: white;
+    box-shadow:
+    -1px -1px 5px 0px black,
+    7px 7px 20px 0px #0003,
+    4px 4px 5px 0px #0002;
+    transition:400ms ease all;
+  }
+  .btn-5:after{
+    right:inherit;
+    top:inherit;
+    left:0;
+    bottom:0;
+  }
+  .btn-5:hover:before,
+  .btn-5:hover:after{
+    width:100%;
+    transition:800ms ease all;
+  }
+  
   div#side-bar div.quick {
     background: transparent;
     border-radius: 15px;

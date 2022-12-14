@@ -1,6 +1,6 @@
 <template>
   <div class="user-text-list">
-    <ul>
+    <ul id='list' >
       <div class='welcome'>
         <p>{{`Welcome, ${$store.state.userName}`}}</p>
       </div>
@@ -18,8 +18,9 @@
 
 export default {
   name: 'user-text-list',
-  props: {text: Object},
+  props: {text: Object}
 }
+
 </script>
 
 <style>
@@ -38,10 +39,10 @@ li.user {
   margin-right: 2%;
   margin-top: 2%;
   height: 50px;
-  background:  #514BF2 ;
-  opacity:60%;
+  background:  rgba(81, 75, 242, 1);
   box-shadow: 10px 10px 5px black;
   animation: slide 1s;
+  color: rgba(222, 223, 236, 1);
 }
 
 li.user p.text {
@@ -49,13 +50,13 @@ li.user p.text {
 }
 
 li.computer {
-  border: 1px solid rgb(230, 240, 230);
+  border: 1px solid #dedfec;
   border-radius: 5px;
   margin-right: 30%;
   margin-left: 2%;
   margin-top: 2%;
   height: auto;
-  background-color: #dedfec;
+  background-color: rgba(222, 223, 236, 1);
   box-shadow: 10px 10px 5px #0C0C0D;
   animation: slide 1s;
 }
@@ -77,11 +78,6 @@ div.welcome {
 
 div.welcome p {
   padding-left: 10px;
-}
-
-p {
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Zen Dots', cursive;
 }
 
 @keyframes slide {

@@ -55,10 +55,11 @@ div.wel form {
 div.wel h1.intro {
   font-size: 40px;
 }
-button{
+
+button {
   font-family: 'Ubuntu', sans-serif;
   position: absolute;
-  top: 50%;
+  
   left: 50%;
   transform: translate(-50%, -50%);
   width: 170px;
@@ -74,6 +75,10 @@ button{
   cursor: pointer;
   overflow: hidden;
   transition: all .35s;
+}
+
+form.user-name button {
+  top: 50%;
 }
 
 
@@ -95,4 +100,5 @@ button:hover{
   background: #ebeaf0bd;
   color: rgb(26, 0, 0);
 }
+
 </style>
