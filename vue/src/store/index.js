@@ -27,7 +27,9 @@ export default new Vuex.Store({
       text: "If you need help with what to ask please type help",
       id: 'computer'
     },
+  
   ],
+  isTrue: false
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

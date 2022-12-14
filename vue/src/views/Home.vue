@@ -8,6 +8,7 @@
         </div>
         <ChatWindow class='win'/>
         <UserInput class='user'/>
+        
      </div>
   </div>
 </template>
@@ -16,7 +17,8 @@
 import SiteIntro from '@/components/SiteIntro';
 import ChatWindow from '@/components/ChatWindow';
 import UserInput from '@/components/UserInput';
-import SideBar from '@/components/SideBar'
+import SideBar from '@/components/SideBar';
+
 
 
 export default {
@@ -24,7 +26,8 @@ export default {
     ChatWindow, 
     UserInput,
     SiteIntro,
-    SideBar
+    SideBar,
+  
   },
   name: "home",
 }
