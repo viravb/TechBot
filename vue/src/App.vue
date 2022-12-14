@@ -10,5 +10,5 @@
 </template>
 
 <style>
-@import './stylesheets/darkmode.css';
+@import './stylesheets/lightmode.css';
 </style>
