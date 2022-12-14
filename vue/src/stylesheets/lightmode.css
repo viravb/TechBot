@@ -51,7 +51,6 @@
   div#side-bar {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     margin-right: 15px;
     box-shadow: 10px 10px 15px #0C0C0D;
     border: 0px solid black;
@@ -83,9 +82,8 @@
     height: 40px;
     line-height: 42px;
     padding: 0;
+    border-radius: 5px;
     border: none;
-    background: black;
-    background: linear-gradient(0deg, rgba(236, 236, 236, 1) 0%, rgba(158, 158, 158, 1) 100%);
     box-shadow: 10px 10px 15px #0C0C0D;
   }
   .btn-5:hover {
@@ -280,6 +278,11 @@ div.user-input button.txt-to-speech {
     flex-direction: row-reverse;
     padding-left: 10px;
     padding-top: 10px;
+  }
+  li p img {
+    height: 200px;
+    border-radius: 0%;
+    display: block;
   }
   
   
