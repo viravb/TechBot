@@ -44,6 +44,12 @@ export default {
                     this.getQuote();
                     this.userText = '';
             }
+            if(this.userText.includes('music') || this.userText.includes('song')){
+                this.$store.state.isTrue = true;
+            }
+            if(this.userText.includes('motivated') || this.userText.includes('pumped')){
+                this.$store.state.isTrue = false;
+            }
             else {
             AnswersService.getAnswers(sentenceToSend).then(response => {
                 this.computerResponse = response.data.answer;
