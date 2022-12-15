@@ -7,7 +7,7 @@
         <button class="txt" @click="startSpeechToTxt()">
             <img src="../../images/My project.png" alt="">
             </button>
-        <button class="end-chat" @click="endChat()">
+        <button class="end-chat" @click="newPage()">
             <img src="../../images/My project (2).png" alt="">
             </button>
         <button class="bottom-boy" v-on:click.prevent="getQuote()">
