@@ -30,41 +30,7 @@ export default {
 </script>
 
 <style>
-body {
-    font: 0.7rem sans-serif;
-  }
 
-  h1 {
-    margin:  10px;
-  }
-
-  ul#episodes {
-    float: left;
-    margin:  0 10px;
-    padding: 0;
-    width: 35%;
-  }
-
-  ul#episodes > li {
-    list-style-type: none;
-  }
-
-  ul#episodes button {
-    position: initial;
-    transform: none;
-    border-radius:  7px;
-    border: 0;
-    background: #191414;
-    color: #fff;
-    padding:  10px;
-    margin:  0 0 3px 0;
-    width: 100%;
-    cursor: pointer;
-  }
-
-  button:hover {
-    background: #1Db954;
-  }
 
 
 </style>

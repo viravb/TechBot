@@ -4,7 +4,7 @@
         <button class="speech" @click="startTxtToSpeech">
             <img src="https://spng.pngfind.com/pngs/s/61-615210_png-file-svg-ios-microphone-icon-png-transparent.png"/>
         </button>
-        <button class="txt" @click="startSpeechToTxt">
+        <button class="txt" @click="startSpeechToTxt()">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.svg.png" alt="">
             </button>
         <button class="end-chat" @click="newPage">
@@ -33,7 +33,8 @@ export default {
             runtimeTranscription_: '',
             computerResponse: '',
             lang_: 'en',
-            quote: ''
+            quote: '',
+            stopSpeech: true
         }
     },
     methods : {
@@ -81,7 +82,13 @@ export default {
         },
         startSpeechToTxt() {
             let utterance = new SpeechSynthesisUtterance(this.computerResponse);
-            window.speechSynthesis.speak(utterance);
+            if(this.stopSpeech) {
+                window.speechSynthesis.speak(utterance);
+                this.stopSpeech = false;
+            } else {
+                window.speechSynthesis.cancel();
+                this.stopSpeech = true;
+            }
         },
         endChat() {
             this.$store.commit('END_CHAT');
