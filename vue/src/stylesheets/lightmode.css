@@ -56,6 +56,11 @@
     border: 0px solid black;
     border-radius: 15px;
   }
+  .ref {
+    font-family: 'Zen Dots', cursive;
+    text-align: center;
+    font-size: 20px;
+  }
   
   div#side-bar h1 {
     font-size: 20px;
@@ -83,6 +88,7 @@
     line-height: 42px;
     padding: 0;
     border-radius: 5px;
+    font-family: 'Zen Dots', cursive;
     border: none;
     box-shadow: 10px 10px 15px #0C0C0D;
   }
@@ -90,6 +96,7 @@
   .btn-5:hover {
     background: transparent;
     box-shadow:none;
+    cursor: pointer;
   }
   .btn-5:before,
   .btn-5:after{
@@ -142,11 +149,11 @@
   }
   
   .header {
-    height: 150px;
+    height: 200px;
     text-align: center;
     display: block;
     margin-left: 5.5%;
-    margin-right: 10%;    
+    margin-right: 0px;    
     border: 0px;
   }
   img {
@@ -253,6 +260,10 @@ div.user-input button.txt-to-speech {
     margin-top: 30px;
     margin-right: 0px;
   }
+  .user-name {
+    display: inline-block;
+    text-align: center;
+  }
   .textBubble {
     display: flex;
   }
@@ -318,6 +329,10 @@ div.user-input button.txt-to-speech {
     background-color: #dedfec;
     box-shadow: 10px 10px 15px #0C0C0D;
     padding-left: 10px;
+  }
+  .instructions {
+    text-align: center;
+    margin-top: 30px;
   }
   
   @keyframes slide {
@@ -462,7 +477,7 @@ div.user-input button.txt-to-speech {
   }
   
   html {
-    background: linear-gradient(145deg, #fff7ff, #dfd0d9);
+    background: linear-gradient(145deg, #dbe0fa, #e1fbf4);
       background-size: 400% 400%;
       animation: gradient 30s ease infinite;
       height: 100vh;
