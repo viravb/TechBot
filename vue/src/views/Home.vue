@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    
      <SiteIntro class='intro'/>
      <SideBar class='side'/>
      <div class='chat-box'>

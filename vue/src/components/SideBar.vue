@@ -1,5 +1,6 @@
 <template>
   <div id='side-bar'>
+    <p class='ref'>Quick Reference</p>
     <a href='https://drive.google.com/file/d/14QJxHbgz1fobZ8mIObZSRPZa2z3OTLZE/view' target="_blank"><button class='btn-5'>Resume</button></a>
     <a href='https://hbr.org/2014/02/how-to-write-a-cover-letter' target="_blank"><button class='btn-5'>Cover Letter</button></a>
     <a href='https://www.javatpoint.com/what-is-database' target="_blank"><button class='btn-5'>Database</button></a>

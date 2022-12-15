@@ -30,7 +30,7 @@ export default new Vuex.Store({
   
   ],
   isTrue: false,
-  style: 'light',
+  style: 'darkmode.css',
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {

@@ -4,34 +4,37 @@
       <img class="header" src="https://i0.wp.com/www.jamiesale-cartoonist.com/wp-content/uploads/cartoon-robot-free.png?ssl=1" alt="">
         <h1 class='intro'>Welcome To TechBot!</h1>
         <h1>To Visit The ChatBot Please Enter Your Name :</h1>
+        <p class='instructions'>Please enter your name and email then take your picture and hit submit!</p>
         <form class='user-name'>
             <input type='text' v-model='name' placeholder='Your Name Here' required/>
             <input type='text' v-model='email' placeholder='Your Email Here' required/>
             <button class="welcome-button" type="submit" v-on:click.stop.prevent='submit(), stopCameraStream()'>Submit</button>
         </form>
     </div>
-    <div class="camera-button">
-      <button type="button" class="camera-open welcome-button" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
-        <span v-if="!isCameraOpen">Open Camera</span>
-        <span v-else>Close Camera</span>
-    </button>
+    <div id='camera'>
+      <div class="camera-button">
+        <button type="button" class="camera-open welcome-button" :class="{ 'is-primary' : !isCameraOpen, 'is-danger' : isCameraOpen}" @click="toggleCamera">
+          <span v-if="!isCameraOpen">Open Camera</span>
+          <span v-else>Close Camera</span>
+      </button>
+    </div>
+    <div v-show="isCameraOpen && isLoading" class="camera-loading">
+      <ul class="loader-circle">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <div v-if="isCameraOpen" v-show="!isLoading" class="camera-box" :class="{ 'flash' : isShotPhoto }">
+      <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
+      <video v-show="!isPhotoTaken" ref="camera" :width="450" :height="337.5" autoplay></video>
+      <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
+    </div>
+    <div v-if="isCameraOpen && !isLoading" class="camera-shoot">
+      <button type="button" class="button welcome-button" @click="takePhoto">Take Photo!</button>
+    </div>
   </div>
-  <div v-show="isCameraOpen && isLoading" class="camera-loading">
-    <ul class="loader-circle">
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
-  </div>
-  <div v-if="isCameraOpen" v-show="!isLoading" class="camera-box" :class="{ 'flash' : isShotPhoto }">
-    <div class="camera-shutter" :class="{'flash' : isShotPhoto}"></div>
-    <video v-show="!isPhotoTaken" ref="camera" :width="450" :height="337.5" autoplay></video>
-    <canvas v-show="isPhotoTaken" id="photoTaken" ref="canvas" :width="450" :height="337.5"></canvas>
-  </div>
-  <div v-if="isCameraOpen && !isLoading" class="camera-shoot">
-    <button type="button" class="button welcome-button" @click="takePhoto">Take Photo!</button>
-  </div>
-  </div>
+</div>
 </template>
 <script>
 
@@ -61,7 +64,6 @@ export default {
                 this.$router.push('/home');
                 const canvas = document.getElementById("photoTaken").toDataURL("image/jpeg");
                 this.$store.state.newPicture = canvas;
-                console.log(canvas);
             }
         },
         toggleCamera() {
