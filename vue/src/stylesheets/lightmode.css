@@ -86,6 +86,7 @@
     border: none;
     box-shadow: 10px 10px 15px #0C0C0D;
   }
+  
   .btn-5:hover {
     background: transparent;
     box-shadow:none;
@@ -324,6 +325,12 @@ div.user-input button.txt-to-speech {
     to {bottom: 0px}
     0%   { opacity: 0; }
     80% { opacity: 1; }
+  }
+  
+  li p img {
+    height: 200px;
+    border-radius: 0%;
+    display: block;
   }
   
   /*---WELCOME---*/
