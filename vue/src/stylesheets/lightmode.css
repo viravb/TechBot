@@ -354,6 +354,7 @@ div.user-input button.txt-to-speech {
     flex-direction: row;
     justify-content: center;
   }
+
   ul.loader-circle {
     list-style: none;
   }
@@ -371,11 +372,13 @@ div.user-input button.txt-to-speech {
      padding: 12px 20px;
      padding-top: 40px;
      margin: 8px 0;
+     margin-left: 40px;
      box-sizing: border-box;
    }
    
    div.wel h1.intro {
      font-size: 40px;
+     text-align: center;
    }
    
    .welcome-button {
@@ -404,6 +407,11 @@ div.user-input button.txt-to-speech {
      left: 0px;
      transform: none;
      display: none;
+   }
+   .instructions {
+    font-family: 'Zen Dots', cursive;
+    text-align: center;
+    margin-left: 70px;
    }
   
    .camera-open {
