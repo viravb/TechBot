@@ -191,13 +191,12 @@ div.user-input {
 
 .speech img {
   height: 30px;
-  
 }
 
 .speech {
-  border-radius: 50%;
+  border-radius: 10%;
   border: 0px;
-  box-shadow: 10px 10px 15px #0C0C0D;
+  box-shadow: 10px 10px 15px #8C82FC;
 }
 .speech:hover {
   background-color: #a5ada5;
@@ -214,11 +213,13 @@ color: white;
 .txt img {
   height: 30px;
 }
+
 .txt {
-  border-radius: 50%;
+  border-radius: 10%;
   border: 0px;
-  box-shadow: 10px 10px 15px #0C0C0D;
+  box-shadow: 10px 10px 15px #8C82FC;
 }
+
 .txt:hover {
   background-color: #a5ada5;
 color: white;
@@ -227,18 +228,18 @@ color: white;
   height: 30px;
 }
 .end-chat {
-  border-radius: 50%;
+  border-radius: 10%;
   border: 0px;
-  box-shadow: 10px 10px 15px #0C0C0D;
+  box-shadow: 10px 10px 15px #8C82FC;
 }
 .end-chat:hover {
   background-color: #a5ada5;
 color: white;
 }
 .bottom-boy {
-  border-radius: 50%;
+  border-radius: 10%;
   border: 0px;
-  box-shadow: 10px 10px 15px #0C0C0D;
+  box-shadow: 10px 10px 15px #8C82FC;
 }
 
 div.user-input input.user-text {

@@ -1,13 +1,13 @@
 <template>
     <div class="user-input">
         <span class="buttons">
-        <button class="speech" @click="startTxtToSpeech">
+        <button class="speech" @click="startTxtToSpeech()">
             <img src="../../images/My project (1).png"/>
         </button>
         <button class="txt" @click="startSpeechToTxt()">
             <img src="../../images/My project.png" alt="">
             </button>
-        <button class="end-chat" @click="newPage">
+        <button class="end-chat" @click="endChat()">
             <img src="../../images/My project (2).png" alt="">
             </button>
         <button class="bottom-boy" v-on:click.prevent="getQuote()">
@@ -92,7 +92,7 @@ export default {
         },
         endChat() {
             this.$store.commit('END_CHAT');
-            this.$router.push('/end');
+            this.$router.push('/');
         },
          sendEmail() {
            emailjs.send(
