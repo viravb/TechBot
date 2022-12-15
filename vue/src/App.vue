@@ -10,5 +10,5 @@
 </template>
 
 <style>
-@import './stylesheets/lightmode.css';
+@import './stylesheets/synthwave.css';
 </style>
