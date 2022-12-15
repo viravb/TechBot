@@ -84,11 +84,13 @@
     font-size: 25px;
     margin-left: 15%;
     width: 220px;
-    
+
     border-radius: 15px;
     box-shadow: 0px 0px 10px 0px #f0f0f0;
     margin-bottom: 15%;
-    box-shadow: inset 2px 2px 2px 2px #f0f0f0;
+    box-shadow: inset 0px 0px 10px 1px #0C0C0D
+                inset 0px 0px 11px 2px #f0f0f0;
+     
   } 
   
   .btn-5 {
@@ -96,7 +98,7 @@
     height: 40px;
     line-height: 42px;
     padding: 0;
-    border-radius: 5px;
+    border-radius: 0px;
     border: none;
     box-shadow: 0px 0px 10px 0px #BB86FC;
     background-color: rgba(187, 134, 252, .5);
@@ -116,7 +118,7 @@
     right:0;
     height:2px;
     width:0;
-    background: #BB86FC;
+    background: linear-gradient(90deg, rgb(223, 220, 220), white);
     box-shadow:
     -1px -1px 5px 0px #949494,
     7px 7px 20px 0px #0003,
@@ -173,8 +175,8 @@
     margin-top: 2%;
     margin-left: 5.5%;
     margin-right: 10%;    
-    box-shadow: 0px 0px 10px 0px #BB86FC;
-    background-color: rgba(187, 134, 252, .5);
+    box-shadow: 0px 0px 10px 0px #f0f0f0;
+    padding-top:10px;
     border-radius: 50%;
   }
   
@@ -203,16 +205,18 @@
     box-shadow: 10px 10px 15px #0C0C0D;
   }
   .speech:hover {
-    background-color: #a5ada5;
-  color: white;
+    box-shadow: 0px 0px 20px 0px #e4dde9;
+    background-color: #ffffff;
+    color: white;
   }
   
   .bottom-boy img {
     height: 30px;
   }
   .bottom-boy:hover {
-    background-color: #a5ada5;
+    background-color: #ffffff;
   color: white;
+  box-shadow: 0px 0px 20px 0px #e4dde9;
   }
   .txt img {
     height: 30px;
@@ -223,8 +227,9 @@
     box-shadow: 10px 10px 15px #0C0C0D;
   }
   .txt:hover {
-    background-color: #a5ada5;
-  color: white;
+    box-shadow: 0px 0px 20px 0px #e4dde9;
+    background-color: #ffffff;
+    color: white;
   }
   .end-chat img {
     height: 30px;
@@ -233,10 +238,12 @@
     border-radius: 50%;
     border: 0px;
     box-shadow: 10px 10px 15px #0C0C0D;
+    
   }
   .end-chat:hover {
-    background-color: #a5ada5;
   color: white;
+  box-shadow: 0px 0px 20px 0px #e4dde9;
+    background-color: #ffffff;
   }
   .bottom-boy {
     border-radius: 50%;
@@ -397,6 +404,8 @@
    
    div.wel h1.intro {
      font-size: 40px;
+     text-shadow: 0px 0px 2px #f0f0f0;
+     
    }
   
    div.wel p.instructions {
