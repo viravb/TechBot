@@ -2,16 +2,16 @@
     <div class="user-input">
         <span class="buttons">
         <button class="speech" @click="startTxtToSpeech">
-            <img src="https://spng.pngfind.com/pngs/s/61-615210_png-file-svg-ios-microphone-icon-png-transparent.png"/>
+            <img src="../../images/My project (1).png"/>
         </button>
         <button class="txt" @click="startSpeechToTxt()">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Speaker_Icon.svg/480px-Speaker_Icon.svg.png" alt="">
+            <img src="../../images/My project.png" alt="">
             </button>
         <button class="end-chat" @click="newPage">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMlNXZQ3HfOvRSmunQ_M367Ey6bE2k9axN7kMM1xQ&s" alt="">
+            <img src="../../images/My project (2).png" alt="">
             </button>
         <button class="bottom-boy" v-on:click.prevent="getQuote()">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNTq8BaumbgezvKV42lj_DA2tSJkvnF3G8jA&usqp=CAU" alt="">
+            <img src="../../images/My project (3).png" alt="">
             </button>
         </span>
         <form v-on:submit.prevent='filteredKeyWord()' class='user-form'>
