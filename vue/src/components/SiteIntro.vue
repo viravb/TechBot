@@ -13,10 +13,4 @@ export default {
 
 <style>
 
-button.style-swap {
-  position: initial;
-  transform: none;
-  margin-right: 10px;
-}
-
 </style>
