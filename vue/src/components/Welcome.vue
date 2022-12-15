@@ -1,7 +1,7 @@
 <template>
   <div class='full'>
     <div class='wel'>
-      <img class="header" src="https://i0.wp.com/www.jamiesale-cartoonist.com/wp-content/uploads/cartoon-robot-free.png?ssl=1" alt="">
+      <img class="header" src="../../images/newrobot.png" alt="">
         <h1 class='intro'>Welcome To TechBot!</h1>
         <h1>To Visit The ChatBot Please Enter Your Name :</h1>
         <p class='instructions'>Please enter your name and email then take your picture and hit submit!</p>
