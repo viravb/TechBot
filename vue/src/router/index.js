@@ -1,8 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '../views/Home'
-import Login from '../views/Login'
-import Logout from '../views/Logout'
 import Register from '../views/Register'
 import store from '../store/index'
 import Welcome from '../views/Welcome'
@@ -28,7 +26,7 @@ const router = new Router({
       name: 'welcome',
       component: Welcome,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -36,29 +34,13 @@ const router = new Router({
       name: 'home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
       path: '/end',
       name: 'end',
       component: EndChat
-    },
-    {
-      path: "/login",
-      name: "login",
-      component: Login,
-      meta: {
-        requiresAuth: false
-      }
-    },
-    {
-      path: "/logout",
-      name: "logout",
-      component: Logout,
-      meta: {
-        requiresAuth: false
-      }
     },
     {
       path: "/register",
